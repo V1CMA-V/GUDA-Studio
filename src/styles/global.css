@@ -1,7 +1,10 @@
 @import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 @theme {
-  --color-background: #c6c6be;
+  --color-background: #faf6f0;
   --color-primary: #0b6f6f;
   --color-text: #1c1c1c;
   --color-secondary: #505050;
@@ -47,9 +50,26 @@ strong {
   background: rgba(255, 255, 255, 0.5);
 }
 
+/* Swiper */
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  border: 2px solid #fff;
+  margin: 0 6px !important;
+  transition: background 0.3s, transform 0.3s;
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
+  transform: scale(1.2);
+  box-shadow: 0 0 8px #fff8;
+}
+
+/* Lenis */
 html.lenis,
 html.lenis body {
-  height: 400dvh;
+  height: auto;
 }
 
 .lenis.lenis-smooth {
