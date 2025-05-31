@@ -1,0 +1,53 @@
+---
+import Button from '@/components/Button.astro'
+---
+
+<div class="relative h-screen w-full max-w-dvw md:aspect-video">
+  <div
+    class="absolute inset-0 h-full w-full flex flex-col items-center justify-center z-10 m-auto"
+  >
+    <section
+      class="absolute z-10 flex justify-center items-center gap-8 flex-col"
+    >
+      <h1
+        id="main-title"
+        class="flex items-center gap-5 text-4xl md:text-6xl lg:gap-20 lg:text-8xl text-primary font-bold uppercase tracking-widest"
+      >
+        <span>G</span>
+        <span>U</span>
+        <span>D</span>
+        <span>A</span>
+        <span>S</span>
+      </h1>
+      <span
+        class="cursive flex items-center gap-3 text-3xl md:text-5xl lg:text-7xl relative -top-10 font-normal tracking-widest text-white"
+      >
+        <span>S</span>
+        <span>t</span>
+        <span>u</span>
+        <span>d</span>
+        <span>i</span>
+        <span>o</span>
+      </span>
+
+      <p class="text-white/75 text-xl lg:text-2xl text-center text-wrap px-4">
+        Donde la pasión cobra vida a través del movimiento
+      </p>
+      <Button href="#"> Reserva tu clase ahora!</Button>
+    </section>
+  </div>
+  <div class="h-full w-full absolute top-0 bg-black/70"></div>
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    id="hero-video"
+    preload="metadata"
+    class="video h-full w-full object-cover object-top"
+  >
+    <source src="/videos/hero.mp4" type="video/mp4" />
+
+    Tu navegador no soporta el video HTML5.
+  </video>
+</div>
