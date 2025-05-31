@@ -1,0 +1,45 @@
+---
+const cards = [
+  {
+    title: 'Nuestra energía en acción',
+    description:
+      'Cada paso cuenta una historia. Descubre cómo vivimos la danza día a día en GUDAS.',
+    image: 'img1.webp',
+  },
+  {
+    title: 'Pasión por la danza',
+    description:
+      'La danza es nuestra vida. Aquí, cada movimiento es una expresión de amor y dedicación.',
+    image: 'img2.webp',
+  },
+  {
+    title: 'Comunidad vibrante',
+    description:
+      'Un espacio donde todos somos parte de una gran familia, compartiendo risas y aprendizajes.',
+    image: 'img3.webp',
+  },
+]
+---
+
+<div class="col-span-10">
+  <div class="swiper swiper-container w-full h-full rounded-xl overflow-hidden">
+    <div class="swiper-wrapper">
+      {
+        cards.map((card) => (
+          <div
+            class={`swiper-slide flex items-center justify-center text-white text-2xl bg-cover bg-center bg-no-repeat`}
+            style={`background-image: url('/images/about/${card.image}')`}
+          >
+            <div class="flex items-center justify-between w-full px-6">
+              <h4 class="flex-3 font-semibold text-lg">{card.title}</h4>
+              <p class="flex-4 text-base font-light">{card.description}</p>
+            </div>
+          </div>
+        ))
+      }
+
+      <!-- Si quieres paginación o flechas -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>

@@ -6,7 +6,12 @@ interface Props {
 const { href = '#' }: Props = Astro.props
 ---
 
-<a href={href} class="relative px-6 py-3 font-bold text-black group">
+<a
+  href={href}
+  class="relative px-6 py-3 font-bold text-black group"
+  rel="noopener noreferrer"
+  target="_blank"
+>
   <span
     class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-primary group-hover:translate-x-0 group-hover:translate-y-0 rounded-2xl"
   ></span>

@@ -23,6 +23,10 @@ const { title, description } = Astro.props as Props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
     <title>{title}</title>
   </head>
   <body>
@@ -33,5 +37,8 @@ const { title, description } = Astro.props as Props
     <Footer />
 
     <script src="/src/animation/about.js" type="module"></script>
+    <script src="/src/animation/swiper.js" type="module"></script>
+    <script src="/src/animation/leaflet.js" type="module"></script>
+    <!-- <script src="/src/animation/map.js" type="module"></script> -->
   </body>
 </html>

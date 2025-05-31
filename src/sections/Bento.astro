@@ -1,1 +1,17 @@
-<h1>HOla a todos</h1>
+---
+import BentoItemMap from '@/components/BentoItemMap.astro'
+import SwiperEvents from '@/components/SwiperEvents.astro'
+import SwiperTeam from '@/components/SwiperTeam.astro'
+---
+
+<div class="w-full h-full flex items-center justify-center">
+  <div class="w-full h-full max-w-7xl p-4 m-auto">
+    <div
+      class="grid grid-cols-1 md:grid-cols-10 auto-rows-[30rem] mx-auto p-6 md:p-12 lg:p-20 gap-4"
+    >
+      <SwiperEvents />
+      <SwiperTeam />
+      <BentoItemMap />
+    </div>
+  </div>
+</div>
