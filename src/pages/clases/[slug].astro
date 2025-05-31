@@ -1,0 +1,101 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Clases, Team } from 'data.json'
+
+export async function getStaticPaths() {
+  return Clases.map((clase) => ({
+    params: { slug: clase.slug },
+    props: { clase },
+  }))
+}
+
+const {
+  slug,
+  name,
+  description,
+  image,
+  tags = [],
+  Horarios = [],
+  coachID,
+} = Astro.props.clase
+
+const coach = Team.find((member) => member.id === coachID)
+---
+
+<!-- TODO: Cambiar por completo el diseño o mejorar la estructura -->
+<Layout title={`Clase | ${name}`} description={description}>
+  <!-- Background -->
+  <div class="absolute inset-0 w-full h-dvh -z-10 overflow-hidden">
+    <img
+      transition:name={`image-${slug}`}
+      src={image}
+      alt={`Fondo de clase ${name}`}
+      class="w-full h-full object-cover object-center -z-20 scale-105 blur-sm brightness-75 transition-all duration-700"
+    />
+  </div>
+
+  <!-- Main Section -->
+  <section
+    class="relative z-10 w-full max-w-6xl mx-auto px-4 py-10 sm:px-6 md:px-10 flex flex-col gap-14 text-white"
+  >
+    <!-- Header -->
+    <header class="text-center space-y-4">
+      <h1
+        class="text-4xl sm:text-5xl font-extrabold drop-shadow-md leading-tight"
+      >
+        {name}
+      </h1>
+      <p class="text-base sm:text-lg font-light max-w-xl mx-auto drop-shadow">
+        {description}
+      </p>
+    </header>
+
+    <!-- Responsive Layout -->
+    <div class="flex flex-col gap-10 md:grid md:grid-cols-6 md:gap-6">
+      <!-- Horarios -->
+      <article
+        class="bg-black/40 rounded-xl p-6 sm:p-8 shadow-lg shadow-black/30 backdrop-blur-md space-y-5 order-1 md:col-span-3 flex flex-col items-center justify-between"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold text-center">Horarios</h2>
+        <ul class="space-y-2 text-sm sm:text-base">
+          {
+            Horarios.map(({ day, time }) => (
+              <li
+                key={`${slug}-${day}`}
+                class="text-center text-2xl font-light tracking-wide"
+              >
+                <strong>{day}:</strong> {time}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="text-center mt-4">
+          <a
+            href="#"
+            class="inline-block text-5xl font-extrabold hover:scale-105 transition-transform hover:text-primary"
+            >Reservar</a
+          >
+        </div>
+      </article>
+
+      <!-- Coach -->
+      {
+        coach && (
+          <article class="bg-black/40 rounded-xl p-6 sm:p-8 shadow-lg shadow-black/30 backdrop-blur-md flex flex-col items-center space-y-4 order-2 md:col-span-3">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center">Coach</h2>
+            <p class="text-lg sm:text-2xl font-semibold text-center">
+              {coach.name}
+            </p>
+            <figure class="w-58 h-64 sm:w-56 sm:h-72 bg-background-cards rounded-lg overflow-hidden group hover:p-3 transition-all duration-500">
+              <img
+                src={`/images/about/${coach.image}`}
+                alt={`Coach ${coach.name}`}
+                class="w-full h-full object-cover rounded-lg duration-500 group-hover:contrast-110 transition"
+              />
+            </figure>
+          </article>
+        )
+      }
+    </div>
+  </section>
+</Layout>

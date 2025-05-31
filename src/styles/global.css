@@ -18,6 +18,8 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
+
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -70,26 +72,44 @@ strong {
 html.lenis,
 html.lenis body {
   height: auto;
+  /* Asegura que el scroll funcione correctamente en todos los navegadores */
+  -webkit-overflow-scrolling: touch;
 }
 
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
+  /* Mejora la transición del scroll para navegadores que lo soportan */
+  scroll-padding-top: env(safe-area-inset-top, 0px);
 }
 
 .lenis:not(.lenis-autoToggle).lenis-stopped {
   overflow: hidden;
+  /* Permite la navegación por teclado cuando Lenis está detenido */
+  outline: none;
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
+  /* Evita el scroll en overlays/modales */
+  touch-action: none;
 }
 
-.lenis.lenis-smooth iframe {
+/* Solo desactiva pointer-events en iframes si es necesario */
+.lenis.lenis-smooth iframe[data-lenis-disable] {
   pointer-events: none;
 }
 
 .lenis.lenis-autoToggle {
   transition-property: overflow;
-  transition-duration: 1ms;
-  transition-behavior: allow-discrete;
+  transition-duration: 120ms;
+  transition-timing-function: ease-in-out;
+  /* transition-behavior solo es soportado en algunos navegadores */
+}
+
+/* Accesibilidad: permite a los usuarios forzar el scroll nativo */
+@media (prefers-reduced-motion: reduce) {
+  html.lenis,
+  html.lenis body {
+    scroll-behavior: auto !important;
+  }
 }

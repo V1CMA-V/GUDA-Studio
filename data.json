@@ -1,0 +1,126 @@
+{
+  "Team": [
+    {
+      "id": 1,
+      "name": "Daniel",
+      "styles": ["Hip-hop", "R&B", "Trap"],
+      "image": "daniel1.webp"
+    },
+    {
+      "id": 2,
+      "name": "María",
+      "styles": ["Ballet", "Contemporáneo"],
+      "image": "img3.webp"
+    }
+  ],
+  "Clases": [
+    {
+      "slug": "hip-hop",
+      "name": "Hip-hop",
+      "description": "Un estilo urbano lleno de energía y ritmo.",
+      "image": "https://images.unsplash.com/photo-1548123378-bde4eca81d2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["team", "profile", "images"],
+      "Horarios": [
+        {
+          "day": "Lunes",
+          "time": "10:00 - 11:30"
+        },
+        {
+          "day": "Miércoles",
+          "time": "10:00 - 11:30"
+        }
+      ],
+      "coachID": 1
+    },
+    {
+      "slug": "jazz",
+      "name": "Jazz",
+      "description": "Un género musical que enfatiza la improvisación.",
+      "image": "https://images.unsplash.com/photo-1541804627596-3b5b9ef58c93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["team", "profile", "images"],
+      "Horarios": [
+        {
+          "day": "Martes",
+          "time": "10:00 - 11:30"
+        },
+        {
+          "day": "Jueves",
+          "time": "10:00 - 11:30"
+        }
+      ],
+      "coachID": 2
+    },
+    {
+      "slug": "ballet",
+      "name": "Ballet",
+      "description": "Una forma de danza clásica que combina técnica y arte.",
+      "image": "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["team", "profile", "images"],
+      "Horarios": [
+        {
+          "day": "Lunes",
+          "time": "12:00 - 13:30"
+        },
+        {
+          "day": "Miércoles",
+          "time": "12:00 - 13:30"
+        }
+      ],
+      "coachID": 1
+    },
+    {
+      "slug": "contemporaneo",
+      "name": "Contemporáneo",
+      "description": "Un estilo de danza que se adapta a las tendencias actuales.",
+      "image": "https://plus.unsplash.com/premium_photo-1689885430776-bbefae37f993?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["team", "profile", "images"],
+      "Horarios": [
+        {
+          "day": "Martes",
+          "time": "12:00 - 13:30"
+        },
+        {
+          "day": "Jueves",
+          "time": "12:00 - 13:30"
+        }
+      ],
+      "coachID": 2
+    },
+    {
+      "slug": "rb",
+      "name": "R&B",
+      "description": "Un género musical que combina ritmo y blues.",
+      "image": "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&facepad=2",
+      "tags": ["team", "profile", "images"],
+      "Horarios": [
+        {
+          "day": "Lunes",
+          "time": "12:00 - 13:30"
+        },
+        {
+          "day": "Miércoles",
+          "time": "12:00 - 13:30"
+        }
+      ],
+      "coachID": 1
+    },
+    {
+      "slug": "trap",
+      "name": "Trap",
+      "description": "Un subgénero del hip-hop con ritmos pesados.",
+      "image": "https://images.unsplash.com/photo-1620281408936-b34691bbb34a?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["team", "profile", "images"],
+      "Horarios": [
+        {
+          "day": "Martes",
+          "time": "12:00 - 13:30"
+        },
+        {
+          "day": "Jueves",
+          "time": "12:00 - 13:30"
+        }
+      ],
+      "coachID": 2
+    }
+  ]
+}

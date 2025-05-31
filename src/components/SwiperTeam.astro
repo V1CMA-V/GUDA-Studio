@@ -1,25 +1,14 @@
 ---
-const TEAM = [
-  {
-    name: 'Daniel',
-    styles: ['Hip-hop', 'R&B', 'Trap'],
-    image: 'daniel1.webp',
-  },
-  {
-    name: 'María',
-    styles: ['Ballet', 'Contemporáneo'],
-    image: 'img3.webp',
-  },
-]
+import { Team } from 'data.json'
 ---
 
-<div class="col-span-5">
+<div class="col-span-10 md:col-span-5">
   <div
     class="swiper swiper-team w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-transparent"
   >
     <div class="swiper-wrapper">
       {
-        TEAM.map((member) => (
+        Team.map((member) => (
           <div class="swiper-slide group flex flex-col items-center justify-end relative h-full">
             <div class="absolute inset-0 w-full h-full z-0">
               <img

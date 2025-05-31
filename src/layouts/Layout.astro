@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions'
+
 import Footer from '@/sections/Footer.astro'
 import Header from '@/sections/Header.astro'
 
@@ -28,6 +30,7 @@ const { title, description } = Astro.props as Props
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
     <Header />
@@ -38,7 +41,5 @@ const { title, description } = Astro.props as Props
 
     <script src="/src/animation/about.js" type="module"></script>
     <script src="/src/animation/swiper.js" type="module"></script>
-    <script src="/src/animation/leaflet.js" type="module"></script>
-    <!-- <script src="/src/animation/map.js" type="module"></script> -->
   </body>
 </html>
