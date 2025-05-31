@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #c6c6be;
+  --color-primary: #0b6f6f;
+  --color-text: #1c1c1c;
+  --color-secondary: #505050;
+  --color-support-1: #7a503f;
+  --color-support-2: #d99e6a;
+  --color-background-cards: #e0ecec;
+  --color-emphasis: #b8494e;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1 {
+  font-family: 'League Spartan Variable', sans-serif;
+}
+
+strong {
+  color: #0b6f6f;
+  font-weight: 600;
+}
+
+@utility cursive {
+  font-family: 'Bilbo Swash Caps', cursive;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+html.lenis,
+html.lenis body {
+  height: 400dvh;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
