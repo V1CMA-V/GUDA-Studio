@@ -1,0 +1,27 @@
+---
+import AboutInfo from './AboutInfo.astro'
+---
+
+<div class="container w-full h-full py-24">
+  <section class="services flex flex-col px-8 py-2">
+    <div class="services-header w-full flex gap-4">
+      <div class="col"></div>
+      <div class="col">
+        <h3 class="text-4xl font-medium text-primary">Sobre Nosotros</h3>
+      </div>
+    </div>
+
+    <AboutInfo />
+  </section>
+</div>
+
+<style>
+  .services-header .col:nth-child(1) {
+    flex: 2;
+  }
+
+  .services-header .col:nth-child(2) {
+    flex: 5;
+    padding: 1em;
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+const info = [
+  {
+    title: 'Misión',
+    description:
+      'Fomentar el desarrollo artístico, físico y emocional de nuestros estudiantes a través de una enseñanza profesional y cercana.',
+    image: 'img1.webp',
+  },
+  {
+    title: 'Visión',
+    description:
+      'Ser reconocidos como un espacio inclusivo y referente de la danza en la región, donde cada persona pueda crecer y brillar.',
+    image: 'img2.webp',
+  },
+  {
+    title: 'Valores',
+    description:
+      'Compromiso, creatividad, respeto y pasión por el arte son los pilares que guían nuestra labor educativa.',
+    image: 'img3.webp',
+  },
+]
+---
+
+{
+  info.map(({ title, description, image }) => {
+    return (
+      <div class="service flex gap-2 h-[150px] border-t-2 border-background-cards/80 mb-10 py-2">
+        <div class="service-info flex-2 w-full h-full flex flex-col justify-between p-1">
+          <h4 class="text-4xl font-medium ">{title}</h4>
+          <p class="text-lg font-normal line text-text">{description}</p>
+        </div>
+        <div class="service-img flex-5 w-full h-full p-1">
+          <div class="img w-[30%] h-full rounded-xl overflow-hidden">
+            <img
+              class="w-full h-full object-cover"
+              src={`/images/about/${image}`}
+              alt={`Imagen de ${title}`}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  })
+}
