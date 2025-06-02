@@ -60,10 +60,7 @@ const coach = Team.find((member) => member.id === coachID)
         <ul class="space-y-2 text-sm sm:text-base">
           {
             Horarios.map(({ day, time }) => (
-              <li
-                key={`${slug}-${day}`}
-                class="text-center text-2xl font-light tracking-wide"
-              >
+              <li class="text-center text-2xl font-light tracking-wide">
                 <strong>{day}:</strong> {time}
               </li>
             ))
