@@ -1,7 +1,7 @@
-@import "tailwindcss";
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
+@import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 
 @theme {
   --color-background: #faf6f0;
@@ -15,15 +15,16 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
 
   scroll-behavior: smooth;
 }
 
-h1 {
-  font-family: "League Spartan Variable", sans-serif;
+h1,
+.h1 {
+  font-family: 'League Spartan Variable', sans-serif;
 }
 
 strong {
@@ -32,7 +33,7 @@ strong {
 }
 
 @utility cursive {
-  font-family: "Bilbo Swash Caps", cursive;
+  font-family: 'Bilbo Swash Caps', cursive;
 }
 
 ::-webkit-scrollbar {

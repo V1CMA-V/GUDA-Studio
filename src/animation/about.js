@@ -1,28 +1,25 @@
 import { gsap } from 'gsap'
-
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lenis from 'lenis'
 
 gsap.registerPlugin(ScrollTrigger)
 
-import Lenis from 'lenis'
-
 document.addEventListener('DOMContentLoaded', function () {
+  const services = gsap.utils.toArray('.service')
+  if (!services.length) return
+
   const lenis = new Lenis({
-    duration: 1.5, // más alto = más suave
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+    duration: 1.5,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
     smoothTouch: true,
   })
 
   lenis.on('scroll', ScrollTrigger.update)
-
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000)
   })
-
   gsap.ticker.lagSmoothing(0)
-
-  const services = gsap.utils.toArray('.service')
 
   const observerOptions = {
     root: null,
@@ -43,8 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
           scrub: true,
           onUpdate: (self) => {
             let progress = self.progress
-            let newWidth = 30 + 70 * progress
-
+            let newWidth = window.innerWidth < 768 ? 70 : 30 + 70 * progress
             gsap.to(imgContainer, {
               width: newWidth + '%',
               duration: 0.1,
@@ -60,8 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
           scrub: true,
           onUpdate: (self) => {
             let progress = self.progress
-            let newHeight = 150 + 300 * progress
-
+            let newHeight =
+              window.innerWidth < 768
+                ? 160 + 100 * progress
+                : 150 + 300 * progress
             gsap.to(service, {
               height: newHeight + 'px',
               duration: 0.1,
@@ -76,8 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   const observer = new IntersectionObserver(observerCallback, observerOptions)
-
-  services.forEach((services) => {
-    observer.observe(services)
+  services.forEach((service) => {
+    observer.observe(service)
   })
 })
