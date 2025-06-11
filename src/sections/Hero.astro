@@ -1,5 +1,16 @@
 ---
-import Button from "@/components/Button.astro";
+import Button from '@/components/Button.astro'
+
+const whatsApp = 2441375131
+
+const message = encodeURIComponent(
+  '¡Hola! Estoy interesado en reservar una clase en GUDAS Studio. ¿Podrían ayudarme con la información?'
+)
+
+const handleWhatsAppClick = () => {
+  const url = `https://wa.me/${whatsApp}?text=${message}`
+  return url
+}
 ---
 
 <div class="relative w-full h-[90vh] sm:h-screen max-w-dvw md:aspect-video">
@@ -27,7 +38,10 @@ import Button from "@/components/Button.astro";
         Donde la pasión cobra vida a través del movimiento
       </p>
       <div class="mt-2 sm:mt-4">
-        <Button href="#" className="w-full max-w-xs sm:max-w-sm">
+        <Button
+          href={handleWhatsAppClick()}
+          className="w-full max-w-xs sm:max-w-sm"
+        >
           Reserva tu clase ahora!
         </Button>
       </div>
@@ -51,27 +65,27 @@ import Button from "@/components/Button.astro";
 </div>
 
 <script>
-  import gsap from "gsap";
-  import { SplitText } from "gsap/SplitText";
+  import gsap from 'gsap'
+  import { SplitText } from 'gsap/SplitText'
 
-  gsap.registerPlugin(SplitText);
+  gsap.registerPlugin(SplitText)
 
-  const mainTitle = document.getElementById("main-title");
+  const mainTitle = document.getElementById('main-title')
   const mainTitleSplit = new SplitText(mainTitle, {
-    type: "chars",
-  });
+    type: 'chars',
+  })
 
   // Ajustar animaciones para móviles
-  const mm = gsap.matchMedia();
+  const mm = gsap.matchMedia()
 
   mm.add(
     {
-      isMobile: "(max-width: 639px)",
-      isTablet: "(min-width: 640px) and (max-width: 1023px)",
-      isDesktop: "(min-width: 1024px)",
+      isMobile: '(max-width: 639px)',
+      isTablet: '(min-width: 640px) and (max-width: 1023px)',
+      isDesktop: '(min-width: 1024px)',
     },
     (context) => {
-      const { isMobile } = context.conditions;
+      const { isMobile } = context.conditions
 
       // Animación del título principal
       gsap.from(mainTitleSplit.chars, {
@@ -79,37 +93,37 @@ import Button from "@/components/Button.astro";
         y: isMobile ? 30 : 50,
         stagger: 0.2,
         autoAlpha: 0,
-        filter: "blur(8px)",
-        ease: "power4.out",
+        filter: 'blur(8px)',
+        ease: 'power4.out',
         delay: isMobile ? 0.5 : 1,
-      });
+      })
 
       // Animación del párrafo
-      const paragraph = document.querySelector("p");
+      const paragraph = document.querySelector('p')
       const paragraphSplit = new SplitText(paragraph, {
-        type: "words",
-        wordsClass: "word",
-      });
+        type: 'words',
+        wordsClass: 'word',
+      })
 
       gsap.from(paragraphSplit.words, {
         duration: isMobile ? 0.8 : 1.2,
         y: isMobile ? 20 : 30,
         autoAlpha: 0,
         stagger: 0.1,
-        filter: "blur(8px)",
-        ease: "power4.out",
+        filter: 'blur(8px)',
+        ease: 'power4.out',
         delay: isMobile ? 0.8 : 1.2,
-      });
+      })
 
       // Animación del botón
-      const button = document.querySelector("a");
+      const button = document.querySelector('a')
       gsap.from(button, {
         duration: isMobile ? 0.8 : 1,
         y: 30,
         autoAlpha: 0,
-        ease: "power4.out",
+        ease: 'power4.out',
         delay: isMobile ? 1.2 : 1.5,
-      });
+      })
     }
-  );
+  )
 </script>
