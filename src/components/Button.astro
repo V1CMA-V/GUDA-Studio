@@ -1,14 +1,15 @@
 ---
 interface Props {
-  href?: string
+  href?: string;
+  className?: string;
 }
 
-const { href = '#' }: Props = Astro.props
+const { href = "#", className = "" }: Props = Astro.props;
 ---
 
 <a
   href={href}
-  class="relative px-6 py-3 font-bold text-black group"
+  class={`relative px-6 py-3 font-bold text-black group ${className}`}
   rel="noopener noreferrer"
   target="_blank"
 >

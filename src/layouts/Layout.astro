@@ -1,20 +1,19 @@
 ---
-import { ClientRouter } from 'astro:transitions'
+import { ClientRouter } from "astro:transitions";
 
-import Footer from '@/sections/Footer.astro'
-import Header from '@/sections/Header.astro'
+import Footer from "@/sections/Footer.astro";
 
-import '@/styles/global.css'
-import '@fontsource-variable/league-spartan'
-import '@fontsource/bilbo-swash-caps'
-import '@fontsource/poppins'
+import "@/styles/global.css";
+import "@fontsource-variable/league-spartan";
+import "@fontsource/bilbo-swash-caps";
+import "@fontsource/poppins";
 
 interface Props {
-  title?: string
-  description?: string
+  title?: string;
+  description?: string;
 }
 
-const { title, description } = Astro.props as Props
+const { title, description } = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -33,14 +32,10 @@ const { title, description } = Astro.props as Props
     <ClientRouter />
   </head>
   <body>
-    <Header />
+    <!-- <Header /> -->
     <main>
       <slot />
     </main>
     <Footer />
-
-    <script src="/src/animation/about.js" type="module"></script>
-    <script src="/src/animation/swiper.js" type="module"></script>
-    <script src="/src/animation/menu.js" type="module"></script>
   </body>
 </html>
