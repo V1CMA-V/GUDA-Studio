@@ -1,26 +1,36 @@
 ---
-import Button from "./Button.astro";
-
-// Mapa centrado en Puebla usando Leaflet
+import Button from './Button.astro'
 ---
 
-<div class="col-span-10 md:col-span-5">
+<div
+  class="col-span-10 md:col-span-5 flex flex-col justify-between h-full"
+  role="region"
+  aria-label="Ubicación en mapa de GUDAS Puebla"
+>
+  <!-- Mapa interactivo -->
   <div
     id="map"
-    class="w-full h-3/4 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-background-cards via-primary/10 to-black/70 shadow-black/30 border-2 border-primary/60"
+    class="w-full h-[20rem] md:h-[24rem] lg:h-[28rem] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-background-cards via-primary/10 to-black/70 border-2 border-primary/60"
   >
   </div>
-  <div class="w-full mt-6 flex flex-col justify-center items-center gap-4">
+
+  <!-- Información y CTA -->
+  <div class="w-full mt-6 flex flex-col items-center text-center gap-4">
     <p
-      class="text-center text-xl md:text-2xl lg:text-3xl text-primary font-bold tracking-wide drop-shadow-lg"
+      class="text-xl md:text-2xl lg:text-3xl font-bold text-primary drop-shadow"
     >
       Visítanos en Puebla, México
     </p>
-    <Button href="https://googlemaps.com">Ver en Google Maps</Button>
+    <Button
+      href="https://www.google.com/maps/place/Puebla"
+      className="text-lg md:text-xl rounded-xl shadow-lg"
+    >
+      Ver en Google Maps
+    </Button>
   </div>
 
+  <!-- Estilos Leaflet personalizados -->
   <style>
-    /* Personaliza los controles y el popup de Leaflet */
     #map .leaflet-control {
       background: rgba(30, 30, 30, 0.85) !important;
       border-radius: 1rem !important;
@@ -28,11 +38,12 @@ import Button from "./Button.astro";
       border: 2px solid #eab30844;
       backdrop-filter: blur(2px);
     }
+
     #map .leaflet-control-zoom-in,
     #map .leaflet-control-zoom-out {
       color: #eab308;
-      font-weight: bold;
       font-size: 1.5rem;
+      font-weight: bold;
       background: #1e293b !important;
       border-radius: 0.75rem !important;
       margin: 4px 0;
@@ -41,42 +52,47 @@ import Button from "./Button.astro";
         background 0.2s,
         color 0.2s;
     }
+
     #map .leaflet-control-zoom-in:hover,
     #map .leaflet-control-zoom-out:hover {
       background: #eab308 !important;
       color: #1e293b;
     }
+
     #map .leaflet-popup-content-wrapper {
       background: linear-gradient(135deg, #1e293b 80%, #eab308 100%);
       color: #fff;
       border-radius: 1.25rem;
       box-shadow: 0 6px 32px #0008;
-      font-family: inherit;
       font-size: 1.15rem;
       border: 2.5px solid #eab308;
       padding: 0.75rem 1.25rem;
     }
+
     #map .leaflet-popup-tip {
       background: #eab308;
     }
+
     #map .leaflet-marker-icon {
       filter: drop-shadow(0 4px 16px #eab308cc) drop-shadow(0 2px 8px #0008);
     }
   </style>
 
+  <!-- Mapa Leaflet -->
   <script>
-    import L from "leaflet";
+    import L from 'leaflet'
 
-    // Espera a que el DOM esté listo
     setTimeout(() => {
-      const map = L.map("map").setView([19.0413, -98.2062], 13); // Puebla
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "&copy; OpenStreetMap contributors",
-      }).addTo(map);
+      const map = L.map('map').setView([19.0413, -98.2062], 13) // Puebla
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+      }).addTo(map)
+
       L.marker([19.0413, -98.2062])
         .addTo(map)
-        .bindPopup("GUDAS Studio - Puebla")
-        .openPopup();
-    }, 0);
+        .bindPopup('GUDAS Studio - Puebla')
+        .openPopup()
+    }, 0)
   </script>
 </div>

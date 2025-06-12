@@ -1,31 +1,35 @@
 import Swiper from 'swiper'
 import {
   Autoplay,
-  Controller,
   EffectCreative,
+  Navigation,
   Pagination,
 } from 'swiper/modules'
 
-// Espera a que el DOM esté listo
+// Swiper de Eventos (Sección principal del Bento)
 setTimeout(() => {
   new Swiper('.swiper-container', {
     modules: [Pagination, Autoplay, EffectCreative],
-    grabCursor: true,
     effect: 'creative',
-    creativeEffect: {
-      prev: {
-        shadow: true,
-        translate: [0, 0, -400],
-      },
-      next: {
-        translate: ['100%', 0, 0],
-      },
-    },
     loop: true,
+    grabCursor: true,
+    speed: 600,
     autoplay: {
-      delay: 5000,
+      delay: 8000,
       pauseOnMouseEnter: true,
       disableOnInteraction: false,
+    },
+    creativeEffect: {
+      prev: {
+        translate: ['-5%', 0, -40],
+        scale: 0.96,
+        opacity: 0.75,
+      },
+      next: {
+        translate: ['5%', 0, -40],
+        scale: 0.96,
+        opacity: 0.75,
+      },
     },
     pagination: {
       el: '.swiper-pagination',
@@ -34,28 +38,33 @@ setTimeout(() => {
   })
 }, 0)
 
-// Swiper TEAM
+// Swiper de Instructores (Team)
 setTimeout(() => {
   new Swiper('.swiper-team', {
-    modules: [Pagination, EffectCreative, Controller],
-    grabCursor: true,
+    modules: [Pagination, EffectCreative, Navigation],
     effect: 'creative',
+    loop: true,
+    grabCursor: true,
+    speed: 500,
     creativeEffect: {
       prev: {
-        shadow: true,
-        translate: ['-120%', 0, -500],
+        translate: ['-4%', 0, -20],
+        scale: 0.98,
+        opacity: 0.85,
       },
       next: {
-        shadow: true,
-        translate: ['120%', 0, -500],
+        translate: ['4%', 0, -20],
+        scale: 0.98,
+        opacity: 0.85,
       },
     },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
-    controller: {
-      control: '.swiper-team',
+    navigation: {
+      nextEl: '.swiper-button-next-team',
+      prevEl: '.swiper-button-prev-team',
     },
   })
 }, 0)

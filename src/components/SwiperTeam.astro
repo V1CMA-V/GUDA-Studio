@@ -1,32 +1,74 @@
 ---
-import { Team } from 'data.json'
+import { Team } from 'data.json' // Asegúrate que las imágenes estén en /images/about/
 ---
 
-<div class="col-span-10 md:col-span-5">
+<div
+  class="col-span-10 md:col-span-5"
+  role="region"
+  aria-label="Carrusel de instructores del equipo"
+>
   <div
-    class="swiper swiper-team w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-transparent"
+    class="swiper swiper-team w-full h-full rounded-3xl overflow-hidden shadow-2xl relative"
   >
+    <!-- Controles prev/next -->
+    <button
+      class="swiper-button-prev-team absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-primary/80 text-white p-2 rounded-full shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/60"
+      aria-label="Anterior instructor"
+    >
+      <svg
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg
+      >
+    </button>
+    <button
+      class="swiper-button-next-team absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-primary/80 text-white p-2 rounded-full shadow-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/60"
+      aria-label="Siguiente instructor"
+    >
+      <svg
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg
+      >
+    </button>
     <div class="swiper-wrapper">
       {
         Team.map((member) => (
-          <div class="swiper-slide group flex flex-col items-center justify-end relative h-full">
+          <div
+            class="swiper-slide group relative flex flex-col justify-end items-center h-full"
+            role="group"
+            aria-label={`Instructor: ${member.name}`}
+          >
+            {/* Imagen completa, sin recorte agresivo */}
             <div class="absolute inset-0 w-full h-full z-0">
               <img
                 src={`/images/about/${member.image}`}
-                alt={`Foto de ${member.name}`}
-                class="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 ease-in-out rounded-3xl shadow-lg shadow-black/30"
+                alt={`Foto del instructor ${member.name}`}
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-in-out rounded-3xl shadow-lg shadow-black/30"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent rounded-3xl" />
-              <div class="absolute top-4 right-4 bg-white/10 text-white text-xs px-3 py-1 rounded-full backdrop-blur-md border border-white/20 shadow">
+
+              {/* Gradiente más suave para que se vea la imagen */}
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent rounded-3xl" />
+
+              {/* Badge superior opcional */}
+              <div class="absolute top-4 right-4 bg-white/10 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm border border-white/20 shadow">
                 Instructor
               </div>
             </div>
-            <div class="relative z-10 w-full p-8 flex flex-col items-center justify-end gap-2">
-              <h4 class="font-extrabold text-2xl md:text-3xl text-white drop-shadow-lg tracking-wide text-center">
+
+            {/* Info del instructor */}
+            <div class="relative z-10 w-full p-6 sm:p-8 flex flex-col items-center text-center gap-1">
+              <h4 class="text-2xl md:text-3xl font-bold text-white drop-shadow-lg tracking-wide">
                 {member.name}
               </h4>
-              <p class="text-base md:text-lg font-light text-white/80 drop-shadow text-center">
+              <p class="text-base md:text-lg text-white/80 font-light">
                 {member.styles.join(', ')}
               </p>
             </div>
@@ -34,6 +76,8 @@ import { Team } from 'data.json'
         ))
       }
     </div>
+
+    <!-- Paginación del Swiper -->
     <div class="swiper-pagination !bottom-2"></div>
   </div>
 </div>

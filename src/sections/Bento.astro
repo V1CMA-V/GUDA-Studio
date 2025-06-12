@@ -4,14 +4,19 @@ import SwiperEvents from '@/components/SwiperEvents.astro'
 import SwiperTeam from '@/components/SwiperTeam.astro'
 ---
 
-<div class="w-full h-full flex items-center justify-center">
-  <div class="w-full h-full max-w-7xl p-4 m-auto">
-    <div
-      class="grid grid-cols-1 md:grid-cols-10 auto-rows-[30rem] mx-auto p-6 md:p-12 lg:p-20 gap-4"
-    >
-      <SwiperEvents />
-      <SwiperTeam />
-      <BentoItemMap />
-    </div>
+<section
+  class="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12"
+  role="region"
+  aria-label="Sección de contenido destacado"
+>
+  <div
+    class="grid grid-cols-1 md:grid-cols-10 auto-rows-[minmax(20rem,32rem)] gap-6 md:gap-8 backdrop-blur-md"
+  >
+    <SwiperEvents />
+    <SwiperTeam />
+    <BentoItemMap />
   </div>
-</div>
+</section>
+
+<!-- Incluye animaciones específicas de Swiper -->
+<script src="@/animation/swiper.js"></script>
