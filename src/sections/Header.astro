@@ -31,20 +31,21 @@ const LINKS = {
 ---
 
 <!-- // Aquí inicia tu componente HTML -->
-<nav class="fixed w-full p-10 flex justify-between items-center z-60">
-  <div class="logo">
-    <a href="/" class="h1 text-primary font-semibold text-4xl"
-      >Gudas <span class="cursive tracking-widest text-white">Studio</span></a
+<header class="fixed w-full z-60">
+  <nav class="flex p-5 justify-between items-center">
+    <div class="logo">
+      <a href="/" class="h1 text-primary font-semibold text-4xl"
+        >Gudas <span class="cursive tracking-widest text-white">Studio</span></a
+      >
+    </div>
+    <div
+      class="menu-toggle text-white hover:text-primary transition-colors relative w-12 h-6 cursor-pointer"
     >
-  </div>
-  <div
-    class="menu-toggle text-white hover:text-primary transition-colors relative w-12 h-6 cursor-pointer"
-  >
-    <p id="menu-open">Menu</p>
-    <p id="menu-close">Close</p>
-  </div>
-</nav>
-
+      <p id="menu-open">Menu</p>
+      <p id="menu-close">Close</p>
+    </div>
+  </nav>
+</header>
 <div class="menu-overlay fixed w-full h-svh bg-[#0f0f0f] z-50 text-secondary">
   <div
     class="menu-content relative w-full h-full flex justify-center items-center"
@@ -97,6 +98,28 @@ const LINKS = {
 </div>
 
 <style>
+  header {
+    background: transparent;
+    animation: header-blur-scroll 0.3s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 250px;
+    border-bottom: 1px solid transparent;
+  }
+
+  @keyframes header-blur-scroll {
+    0% {
+      backdrop-filter: blur(0px);
+      background: transparent;
+    }
+
+    100% {
+      backdrop-filter: blur(10px);
+      background: rgba(133, 135, 135, 0.5);
+      padding-bottom: var(--spacing-6);
+      border-bottom-color: var(--color-primary);
+    }
+  }
+
   .menu-toggle p {
     position: absolute;
     transform-origin: top left;
