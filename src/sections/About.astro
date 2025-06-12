@@ -2,25 +2,20 @@
 import AboutInfo from '@/components/AboutInfo.astro'
 ---
 
-<div class="relative w-full max-w-7xl m-auto my-24 px-4">
-  <section>
+<div class="min-h-[90dvh] my-10 sm:my-16">
+  <section
+    class="w-full max-w-2xl sm:max-w-4xl md:max-w-7xl m-auto my-6 sm:my-10 px-2 sm:px-4"
+  >
     <h2
       id="about"
-      class="text-center font-semibold text-xl md:text-3xl lg:text-4xl mb-8"
+      class="text-center font-semibold text-lg sm:text-xl md:text-3xl lg:text-4xl mb-4 sm:mb-8"
     >
       <span class="text-primary tracking-widest">GUDAS</span> | Escuela de baile
       en Puebla <br /> Pasión, técnica y comunidad en cada paso
     </h2>
     <p
-      class="text-center text-pretty text-lg md:text-xl lg:text-2xl text-secondary"
+      class="text-center text-pretty text-base sm:text-lg md:text-xl lg:text-2xl text-secondary"
     >
-      <!-- En <strong>GUDAS</strong>, somos más que una escuela de baile: somos una
-      comunidad donde la pasión por <strong>el movimiento</strong>, <strong
-        >la música</strong
-      > y <strong>la expresión personal</strong> se vive todos los días. Ofrecemos
-      clases para <strong>todas las edades y niveles</strong>, desde
-      principiantes hasta bailarines avanzados. -->
-
       En <strong>Gudas Studio</strong> creemos que la danza es <strong
         >para todos</strong
       >. Te invitamos a unirte a nuestro programa de entrenamiento <strong
@@ -29,8 +24,7 @@ import AboutInfo from '@/components/AboutInfo.astro'
       o experiencia.
     </p>
 
-    <AboutInfo />
-
     <!-- <AboutAnimation /> -->
   </section>
+  <AboutInfo />
 </div>
