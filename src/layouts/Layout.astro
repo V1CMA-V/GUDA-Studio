@@ -1,13 +1,12 @@
 ---
-import { ClientRouter } from 'astro:transitions'
-
 import Footer from '@/sections/Footer.astro'
+import Header from '@/sections/Header.astro'
+import Merch from '@/sections/Merch.astro'
 
 import '@/styles/global.css'
 import '@fontsource-variable/league-spartan'
 import '@fontsource/bilbo-swash-caps'
 import '@fontsource/poppins'
-import Header from '@/sections/Header.astro'
 
 interface Props {
   title?: string
@@ -30,13 +29,13 @@ const { title, description } = Astro.props as Props
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <title>{title}</title>
-    <ClientRouter />
   </head>
   <body>
     <Header />
     <main>
       <slot />
     </main>
+    <Merch />
     <Footer />
   </body>
 </html>

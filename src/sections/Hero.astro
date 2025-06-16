@@ -18,14 +18,14 @@ const handleWhatsAppClick = () => {
     class="absolute inset-0 h-full w-full flex flex-col items-center justify-center z-10 m-auto px-4 sm:px-6"
   >
     <section
-      id="hero-section"
       class="flex flex-col items-center gap-20 sm:gap-6 md:gap-8 w-full max-w-4xl mx-auto"
     >
       <h1
         class="flex flex-col items-center gap-2 sm:gap-3 md:gap-5 lg:gap-6 text-7xl md:text-9xl font-bold tracking-wider"
       >
-        <span class="text-primary text-center">GUDAS</span>
+        <span id="title-hero" class="text-primary text-center">GUDAS</span>
         <span
+          id="subtitle-hero"
           class="cursive text-5xl md:text-6xl lg:text-7xl font-normal text-white relative -mt-9 md:-mt-6 lg:-mt-18"
         >
           Studio
@@ -33,6 +33,7 @@ const handleWhatsAppClick = () => {
       </h1>
 
       <p
+        id="text-hero"
         class="text-white/90 text-lg sm:text-xl lg:text-2xl text-center px-2 sm:px-4 max-w-2xl leading-relaxed"
       >
         Donde la pasión cobra vida a través del movimiento
@@ -83,60 +84,39 @@ const handleWhatsAppClick = () => {
 
   gsap.registerPlugin(SplitText)
 
-  const mainTitle = document.querySelector('#hero-section h1')
-  const mainTitleSplit = new SplitText(mainTitle, {
+  const titleHero = SplitText.create('#title-hero', {
     type: 'chars',
   })
 
-  // Ajustar animaciones para móviles
-  const mm = gsap.matchMedia()
-
-  mm.add(
-    {
-      isMobile: '(max-width: 639px)',
-      isTablet: '(min-width: 640px) and (max-width: 1023px)',
-      isDesktop: '(min-width: 1024px)',
+  const tl = gsap.timeline({
+    defaults: {
+      ease: 'power2.out',
+      duration: 1.2,
     },
-    (context) => {
-      const { isMobile } = context.conditions
+  })
 
-      // Animación del título principal
-      gsap.from(mainTitleSplit.chars, {
-        duration: 1,
-        y: isMobile ? 30 : 50,
-        stagger: 0.2,
-        autoAlpha: 0,
-        filter: 'blur(8px)',
-        ease: 'power4.out',
-        delay: isMobile ? 0.5 : 1,
-      })
-
-      // Animación del párrafo
-      const paragraph = document.querySelector('#hero-section p')
-      const paragraphSplit = new SplitText(paragraph, {
-        type: 'words',
-        wordsClass: 'word',
-      })
-
-      gsap.from(paragraphSplit.words, {
-        duration: isMobile ? 0.8 : 1.2,
-        y: isMobile ? 20 : 30,
-        autoAlpha: 0,
-        stagger: 0.1,
-        filter: 'blur(8px)',
-        ease: 'power4.out',
-        delay: isMobile ? 0.8 : 1.2,
-      })
-
-      // Animación del botón
-      const button = document.querySelector('#hero-section #button-hero')
-      gsap.from(button, {
-        duration: isMobile ? 0.8 : 1,
-        y: 30,
-        autoAlpha: 0,
-        ease: 'power4.out',
-        delay: isMobile ? 1.2 : 1.5,
-      })
-    }
-  )
+  tl.from(titleHero.chars, {
+    delay: 1.5,
+    y: 50,
+    alpha: 0,
+    stagger: 0.05,
+    filter: 'blur(10px)',
+  })
+    .from(
+      '#subtitle-hero',
+      {
+        y: 50,
+        alpha: 0,
+        filter: 'blur(10px)',
+      },
+      '<'
+    )
+    .from('#text-hero', {
+      y: 50,
+      alpha: 0,
+    })
+    .from('#button-hero', {
+      y: 50,
+      alpha: 0,
+    })
 </script>

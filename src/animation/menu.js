@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let isOpen = false
   let isAnimating = false
 
+  gsap.from('#header', {
+    y: -100,
+    opacity: 0,
+    duration: 1.25,
+    delay: 1.5,
+    ease: 'power4.out',
+  })
+
   function handleOverlayClick(e) {
     if (isOpen && !isAnimating) closeMenu()
   }
