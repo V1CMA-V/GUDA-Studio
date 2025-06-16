@@ -42,3 +42,14 @@ import LineText from '@/components/LineText.astro'
   </div>
 </section>
 <LineText side="left" />
+
+<style>
+  h2,
+  p,
+  a,
+  img {
+    animation: fadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 40%;
+  }
+</style>

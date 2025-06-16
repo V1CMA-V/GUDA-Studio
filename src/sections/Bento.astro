@@ -17,3 +17,11 @@ import SwiperTeam from '@/components/SwiperTeam.astro'
     <BentoItemMap />
   </div>
 </section>
+
+<style>
+  .bento-item {
+    animation: bentoIn linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+</style>

@@ -28,3 +28,12 @@ import AboutInfo from '@/components/AboutInfo.astro'
   </section>
   <AboutInfo />
 </div>
+
+<style>
+  h2,
+  p {
+    animation: fadeIn linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+</style>
