@@ -43,12 +43,42 @@ import Whatsapp from '@/components/icons/Whatsapp.astro'
   </div>
 </section>
 
-<style>
-  h3,
-  p,
-  div {
-    animation: fadeIn linear both;
-    animation-timeline: view();
-    animation-range: entry 25% cover 40%;
-  }
-</style>
+<script>
+  import gsap from 'gsap'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#contact',
+      start: 'top center',
+      end: 'center center',
+      scrub: true,
+    },
+  })
+
+  tl.from('#contact h3', {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+  })
+    .from(
+      '#contact p',
+      {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+      },
+      '-=0.5'
+    )
+    .from(
+      '#contact a',
+      {
+        y: 50,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+      },
+      '-=0.5'
+    )
+</script>
