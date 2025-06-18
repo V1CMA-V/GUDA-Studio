@@ -1,0 +1,75 @@
+---
+import WeDoText from '@/components/WeDoText.astro'
+---
+
+<section
+  class="w-full max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row gap-8"
+>
+  <div class="flex-2 w-full p-8 sticky-title-container">
+    <h3
+      class="sticky-title text-5xl md:text-7xl font-bold leading-tight text-primary"
+    >
+      ¿Qué Hacemos?
+    </h3>
+  </div>
+
+  <div class="flex-3">
+    <WeDoText title="Clases de Baile">
+      Ofrecemos <strong>clases de baile</strong> para todos los niveles, desde <strong
+        >principiantes</strong
+      >
+      hasta <strong>avanzados</strong>. Nuestros <strong>instructores</strong> son
+      apasionados y están aquí para ayudarte a <strong
+        >mejorar tus habilidades</strong
+      >.
+    </WeDoText>
+
+    <WeDoText title="Eventos y Talleres">
+      Organizamos <strong>eventos</strong> y <strong>talleres</strong> regulares
+      para que puedas aprender de los mejores y disfrutar de la <strong
+        >comunidad de baile</strong
+      >. ¡Mantente atento a nuestras próximas <strong>actividades</strong>!
+    </WeDoText>
+
+    <WeDoText title="Competencias">
+      Participamos en <strong>competencias locales y nacionales</strong>,
+      brindando a nuestros miembros la oportunidad de <strong
+        >mostrar su talento</strong
+      > y <strong>dedicación</strong>. ¡Únete a nosotros y <strong
+        >compite con los mejores</strong
+      >!
+    </WeDoText>
+
+    <WeDoText title="Comunidad">
+      En <strong>Gudas Studio</strong>, creemos en la importancia de la <strong
+        >comunidad</strong
+      >. Fomentamos un ambiente <strong>inclusivo</strong> y <strong
+        >amigable</strong
+      > donde todos pueden disfrutar del baile y hacer <strong
+        >nuevos amigos</strong
+      >.
+    </WeDoText>
+  </div>
+</section>
+
+<style>
+  .sticky-title-container {
+    position: relative;
+    height: 100vh;
+  }
+  .sticky-title {
+    position: sticky;
+    top: 5rem; /* Ajusta este valor para el espacio desde arriba */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+  @media (max-width: 768px) {
+    .sticky-title-container {
+      height: auto;
+    }
+    .sticky-title {
+      position: static;
+      top: unset;
+    }
+  }
+</style>

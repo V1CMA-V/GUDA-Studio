@@ -1,6 +1,12 @@
 ---
 import Button from '@/components/Button.astro'
 
+interface Props {
+  videoSrc?: string
+}
+
+const { videoSrc } = Astro.props
+
 const whatsApp = 2441375131
 
 const message = encodeURIComponent(
@@ -36,7 +42,7 @@ const handleWhatsAppClick = () => {
         id="text-hero"
         class="text-white/90 text-lg sm:text-xl lg:text-2xl text-center px-2 sm:px-4 max-w-2xl leading-relaxed"
       >
-        Donde la pasión cobra vida a través del movimiento
+        <slot />
       </p>
       <div id="button-hero" class="mt-2 sm:mt-4">
         <Button
@@ -60,7 +66,7 @@ const handleWhatsAppClick = () => {
     preload="auto"
     class="absolute h-full w-full object-cover object-center -z-10"
   >
-    <source src="/videos/hero.mp4" type="video/mp4" />
+    <source src={videoSrc} type="video/mp4" />
     Tu navegador no soporta el video HTML5.
   </video>
 
@@ -73,7 +79,7 @@ const handleWhatsAppClick = () => {
     preload="auto"
     class="absolute h-full w-full object-cover object-center -z-20 blur-2xl top-10"
   >
-    <source src="/videos/hero.mp4" type="video/mp4" />
+    <source src={videoSrc} type="video/mp4" />
     Tu navegador no soporta el video HTML5.
   </video>
 </div>

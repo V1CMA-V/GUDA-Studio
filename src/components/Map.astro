@@ -1,0 +1,59 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className = '' } = Astro.props as Props
+---
+
+<!-- Mapa interactivo -->
+<div id="map" class={className}></div>
+
+<!-- Estilos Leaflet personalizados -->
+<style>
+  #map .leaflet-control {
+    background: rgba(30, 30, 30, 0.85) !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 16px #0006;
+    border: 2px solid #eab30844;
+    backdrop-filter: blur(2px);
+  }
+
+  #map .leaflet-control-zoom-in,
+  #map .leaflet-control-zoom-out {
+    color: #eab308;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #1e293b !important;
+    border-radius: 0.75rem !important;
+    margin: 4px 0;
+    border: 1.5px solid #eab30844;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  #map .leaflet-control-zoom-in:hover,
+  #map .leaflet-control-zoom-out:hover {
+    background: #eab308 !important;
+    color: #1e293b;
+  }
+
+  #map .leaflet-popup-content-wrapper {
+    background: linear-gradient(135deg, #1e293b 80%, #eab308 100%);
+    color: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 32px #0008;
+    font-size: 1.15rem;
+    border: 2.5px solid #eab308;
+    padding: 0.75rem 1.25rem;
+  }
+
+  #map .leaflet-popup-tip {
+    background: #eab308;
+  }
+
+  #map .leaflet-marker-icon {
+    filter: drop-shadow(0 4px 16px #eab308cc) drop-shadow(0 2px 8px #0008);
+  }
+</style>
