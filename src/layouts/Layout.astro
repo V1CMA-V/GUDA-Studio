@@ -1,12 +1,8 @@
 ---
 import Footer from '@/sections/Footer.astro'
 import Header from '@/sections/Header.astro'
-import Merch from '@/sections/Merch.astro'
 
 import '@/styles/global.css'
-import '@fontsource-variable/league-spartan'
-import '@fontsource/bilbo-swash-caps'
-import '@fontsource/poppins'
 
 interface Props {
   title?: string
@@ -21,7 +17,7 @@ const { title, description } = Astro.props as Props
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo-white.webp" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
 
@@ -35,11 +31,6 @@ const { title, description } = Astro.props as Props
     <main>
       <slot />
     </main>
-    <Merch />
     <Footer />
   </body>
 </html>
-
-<!-- Incluye animaciones específicas de Swiper -->
-<script src="@/animation/swiper.js"></script>
-<script src="@/animation/map.js"></script>

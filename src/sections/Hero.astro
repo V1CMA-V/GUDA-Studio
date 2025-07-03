@@ -1,128 +1,56 @@
 ---
-import Button from '@/components/Button.astro'
-
-interface Props {
-  videoSrc?: string
-}
-
-const { videoSrc } = Astro.props
-
-const whatsApp = 2441375131
-
-const message = encodeURIComponent(
-  '¡Hola! Estoy interesado en reservar una clase en GUDAS Studio. ¿Podrían ayudarme con la información?'
-)
-
-const handleWhatsAppClick = () => {
-  const url = `https://wa.me/${whatsApp}?text=${message}`
-  return url
-}
+import GradientText from '@/components/GradientText.astro'
 ---
 
-<div class="relative w-full h-[90vh] sm:h-screen max-w-dvw md:aspect-video">
+<section class="">
   <div
-    class="absolute inset-0 h-full w-full flex flex-col items-center justify-center z-10 m-auto px-4 sm:px-6"
+    class="w-full h-dvh max-w-6xl m-auto flex flex-col items-center justify-center gap-10"
   >
-    <section
-      class="flex flex-col items-center gap-20 sm:gap-6 md:gap-8 w-full max-w-4xl mx-auto"
+    <div
+      class="w-auto h-40 md:w-auto md:h-110 group flex flex-col items-center justify-center"
     >
-      <h1
-        class="flex flex-col items-center gap-2 sm:gap-3 md:gap-5 lg:gap-6 text-7xl md:text-9xl font-bold tracking-wider"
+      <h2
+        class="w-fit px-2 py-1 text-white bg-gradient-to-br from-primary to-text font-semibold text-lg md:text-2xl rounded-lg mb-2 group-hover:translate-y-3 transition-transform duration-200"
       >
-        <span id="title-hero" class="text-primary text-center">GUDAS</span>
-        <span
-          id="subtitle-hero"
-          class="cursive text-5xl md:text-6xl lg:text-7xl font-normal text-white relative -mt-9 md:-mt-6 lg:-mt-18"
-        >
-          Studio
-        </span>
-      </h1>
+        Alitxco, Puebla <span class="text-sm">MX</span>
+      </h2>
+      <img
+        src="logo-white.webp"
+        alt="Logo Guda Studio"
+        class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-200"
+      />
+    </div>
 
-      <p
-        id="text-hero"
-        class="text-white/90 text-lg sm:text-xl lg:text-2xl text-center px-2 sm:px-4 max-w-2xl leading-relaxed"
+    <p class="text-2xl md:text-3xl text-center font-semibold text-white">
+      Donde el arte del movimiento se fusiona con el desarrollo físico y
+      técnico.
+    </p>
+    <GradientText
+      colors={['#0a716f', '#4079ff', '#0a716f', '#4079ff', '#0a716f']}
+      animationSpeed={10}
+      showBorder={false}
+      className="text-4xl"
+    >
+      Transformamos pasión en excelencia artística.
+    </GradientText>
+
+    <div class="flex flex-col md:flex-row gap-10 items-center">
+      <a
+        href="#"
+        class="px-5 py-2 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
+        >Comienza Tu Entrenamiento</a
       >
-        <slot />
-      </p>
-      <div id="button-hero" class="mt-2 sm:mt-4">
-        <Button
-          href={handleWhatsAppClick()}
-          className="w-full max-w-xs sm:max-w-sm"
-        >
-          Reserva tu clase ahora!
-        </Button>
-      </div>
-    </section>
+      <a
+        href="#"
+        class="px-5 py-2 text-xl text-white bg-transparent rounded-lg border border-white font-semibold hover:bg-white hover:text-primary transition-colors duration-200"
+        >Conoce Nuestras Clases</a
+      >
+    </div>
   </div>
 
-  <div class="absolute inset-0 bg-black/50 z-0"></div>
-
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    id="hero-video"
-    preload="auto"
-    class="absolute h-full w-full object-cover object-center -z-10"
-  >
-    <source src={videoSrc} type="video/mp4" />
-    Tu navegador no soporta el video HTML5.
-  </video>
-
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    id="hero-video"
-    preload="auto"
-    class="absolute h-full w-full object-cover object-center -z-20 blur-2xl top-10"
-  >
-    <source src={videoSrc} type="video/mp4" />
-    Tu navegador no soporta el video HTML5.
-  </video>
-</div>
-
-<script>
-  import gsap from 'gsap'
-  import { SplitText } from 'gsap/SplitText'
-
-  gsap.registerPlugin(SplitText)
-
-  const titleHero = SplitText.create('#title-hero', {
-    type: 'chars',
-  })
-
-  const tl = gsap.timeline({
-    defaults: {
-      ease: 'power2.out',
-      duration: 1.2,
-    },
-  })
-
-  tl.from(titleHero.chars, {
-    delay: 1.5,
-    y: 50,
-    alpha: 0,
-    stagger: 0.05,
-    filter: 'blur(10px)',
-  })
-    .from(
-      '#subtitle-hero',
-      {
-        y: 50,
-        alpha: 0,
-        filter: 'blur(10px)',
-      },
-      '<'
-    )
-    .from('#text-hero', {
-      y: 50,
-      alpha: 0,
-    })
-    .from('#button-hero', {
-      y: 50,
-      alpha: 0,
-    })
-</script>
+  <div class="absolute inset-0 w-full h-full overflow-hidden -z-30">
+    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent">
+    </div>
+    <video src="/videos/hero.mp4" autoplay loop muted></video>
+  </div>
+</section>

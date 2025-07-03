@@ -1,103 +1,69 @@
 ---
-const LINKS = {
-  nav: [
-    {
-      label: 'Inicio',
-      href: '/',
-      img: 'https://images.unsplash.com/photo-1483490109305-acf13776a5fa?q=80&w=2072&auto=format&fit=crop',
-    },
-    {
-      label: 'Sobre Nosotros',
-      href: '/sobre-nosotros',
-      img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2072&auto=format&fit=crop',
-    },
-    {
-      label: 'Clases',
-      href: '/clases',
-      img: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=2072&auto=format&fit=crop',
-    },
-    {
-      label: 'Merch',
-      href: '/merch',
-      img: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=2072&auto=format&fit=crop',
-    },
-  ],
-  socials: [
-    { label: 'WhatsApp', href: 'https://wa.me/1234567890' },
-    { label: 'Facebook', href: 'https://www.facebook.com/yourprofile' },
-    { label: 'Instagram', href: 'https://www.instagram.com/yourprofile' },
-  ],
-}
+const { pathname } = Astro.url
+
+// Resaltar la clase activa en el menú de navegación
+const isActive = (path: string) => pathname === path
 ---
 
-<!-- // Aquí inicia tu componente HTML -->
-<header id="header" class="fixed w-full z-60">
-  <nav class="flex p-5 justify-between items-center max-w-7xl m-auto">
-    <div class="logo">
-      <a href="/" class="h1 text-primary font-semibold text-4xl">
-        Gudas <span class="cursive tracking-widest text-white">Studio</span>
+<header
+  class="fixed top-0 z-50 mx-auto flex h-20 w-full select-none items-center text-white sm:overflow-hidden"
+>
+  <div class="relative flex justify-between px-6 py-4 md:w-full">
+    <div class="w-24 h-auto">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/logo-white.webp" alt="Logo Guda Studio" />
       </a>
     </div>
-    <div
-      class="menu-toggle text-white hover:text-primary transition-colors relative w-12 h-6 cursor-pointer"
-    >
-      <p id="menu-open">Menu</p>
-      <p id="menu-close">Close</p>
-    </div>
-  </nav>
-</header>
-<div class="menu-overlay fixed w-full h-svh bg-[#0f0f0f] z-50 text-secondary">
-  <div
-    class="menu-content relative w-full h-full flex justify-center items-center"
-    tabindex="-1"
-  >
-    <div class="menu-items w-full p-10 flex gap-5">
-      <div class="col-lg flex-3 flex justify-center items-center">
-        <div
-          class="menu-preview-img relative w-[45%] h-full overflow-hidden min-h-80 min-w-52 flex items-center justify-center rounded-2xl"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1748033766479-fa6b0f9f6b33?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0"
-            alt=""
-            class="w-full h-full object-cover absolute top-0 left-0"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      <div class="col-sm flex-2 px-2.5 py-0 flex flex-col gap-10">
-        <div class="menu-links flex flex-col gap-2">
-          {
-            LINKS.nav.map((link) => (
-              <div class="link hover:text-white">
-                <a href={link.href} data-img={link.img}>
-                  {link.label}
-                </a>
-              </div>
-            ))
-          }
-        </div>
-        <div class="menu-socials flex flex-col gap-2">
-          {
-            LINKS.socials.map((social) => (
-              <div class="social">
-                <a href={social.href}>{social.label}</a>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </div>
-    <div
-      class="menu-footer w-full p-10 flex gap-5 absolute bottom-0 text-white/80"
-    >
-      <div class="col-lg flex-3"><a href="#">Horarios</a></div>
-      <div class="col-sm flex-2 flex justify-between">
-        <a href="#contact">Contacto</a>
-        <a href="#">Eventos</a>
-      </div>
+
+    <nav>
+      <ul class="flex gap-8 text-lg font-semibold" id="navContent">
+        <li>
+          <a
+            href="/"
+            class=`${isActive('/') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            class=`${isActive('/about') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            >Sobre Nosotros</a
+          >
+        </li>
+        <li>
+          <a
+            href="/classes"
+            class=`${isActive('/classes') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            >Clases</a
+          >
+        </li>
+        <li>
+          <a
+            href="/crew"
+            class=`${isActive('/crew') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            >Equipo</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contact"
+            class=`${isActive('/contact') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a
+        href="#"
+        class="px-5 py-3 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
+        >Ver tienda</a
+      >
     </div>
   </div>
-</div>
+</header>
 
 <style>
   header {
@@ -116,108 +82,27 @@ const LINKS = {
 
     100% {
       backdrop-filter: blur(10px);
-      background: rgba(133, 135, 135, 0.5);
+      background: rgba(0, 0, 0, 0.5);
       padding-bottom: var(--spacing-6);
-      border-bottom-color: var(--color-primary);
+      border-bottom-color: black;
     }
   }
 
-  .menu-toggle p {
-    position: absolute;
-    transform-origin: top left;
-    will-change: transform, opacity;
+  #navContent {
+    transition:
+      translate 0.3s ease-in-out,
+      visibility 0.3s 0.3s;
   }
 
-  .menu-content {
-    transform-origin: left bottom;
-    will-change: transform, opacity;
+  #navContent.showing {
+    visibility: visible;
+    translate: 0 0;
+    transition:
+      translate 0.3s ease-in-out,
+      visibility 0.3s;
   }
 
-  .link,
-  .social {
-    padding-bottom: 5px;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-
-  .link a,
-  .social a {
-    display: inline-block;
-    will-change: transform;
-    transition: color 0.5s;
-  }
-
-  .link a {
-    font-size: 3.5rem;
-    letter-spacing: -0.02rem;
-  }
-
-  .social a {
-    color: #8d8d8d;
-  }
-
-  .social a:hover {
-    color: #fff;
-  }
-
-  .link a::after,
-  .social a::after,
-  .menu-footer a::after {
-    position: absolute;
-    content: '';
-    top: 102.5%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
-  }
-
-  .link a:hover::after,
-  .social a:hover::after,
-  .menu-footer a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  .menu-toggle p#menu-close {
-    opacity: 0;
-    transform: translateX(-5px) translateY(10px) rotate(5deg);
-  }
-
-  .link a,
-  .social a {
-    transform: translateY(120%);
-    /* opacity: 0.25; */
-  }
-
-  .menu-content {
-    transform: translateX(-100px) translateY(-100px) scale(1.5) rotate(-15deg);
-    /* opacity: 0.25; */
-  }
-
-  .menu-overlay {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-  }
-
-  @media (max-width: 900px) {
-    .hero h1 {
-      width: 100%;
-      font-size: 4rem;
-      letter-spacing: 0;
-    }
-
-    .menu-items .col-lg {
-      display: none;
-    }
-
-    .link a::after,
-    .social a::after,
-    .menu-footer a::after {
-      display: none;
-    }
+  .logo-glow-teal {
+    filter: drop-shadow(0 0 6px #14b8a6) drop-shadow(0 0 1px #fff);
   }
 </style>
-
-<script src="@/animation/menu.js"></script>

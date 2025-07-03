@@ -1,21 +1,18 @@
 @import 'tailwindcss';
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
 
 @theme {
-  --color-background: #faf6f0;
-  --color-primary: #0b6f6f;
-  --color-text: #1c1c1c;
-  --color-secondary: #505050;
-  --color-support-1: #7a503f;
-  --color-support-2: #d99e6a;
-  --color-background-cards: #e0ecec;
-  --color-emphasis: #b8494e;
+  --color-background: #fdf8f3;         /* Cremita claro, cálido y elegante */
+  --color-primary: #0a716f;           /* Verde institucional */
+  --color-text: #1c1c1c;              /* Texto principal, casi negro */
+  --color-secondary: #4f4f4f;         /* Texto secundario, gris medio */
+  --color-support-1: #7a503f;         /* Marrón rojizo, cálido, terroso */
+  --color-support-2: #d99e6a;         /* Beige dorado, elegante */
+  --color-background-cards: #eaf3f3;  /* Verde grisáceo muy claro, para tarjetas */
+  --color-emphasis: #b8494e;          /* Rojo vino suave, para llamados a la acción */
 }
 
+
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: var(--color-background);
   color: var(--color-text);
   overflow-x: hidden;
@@ -23,10 +20,6 @@ body {
   scroll-behavior: smooth;
 }
 
-h1,
-.h1 {
-  font-family: 'League Spartan Variable', sans-serif;
-}
 img {
   width: 100%;
   height: 100%;
@@ -38,9 +31,6 @@ strong {
   font-weight: 600;
 }
 
-@utility cursive {
-  font-family: 'Bilbo Swash Caps', cursive;
-}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -59,47 +49,6 @@ strong {
   background: rgba(255, 255, 255, 0.5);
 }
 
-/* Swiper */
-.swiper-pagination-bullet {
-  width: 16px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.4);
-  opacity: 1;
-  border: 2px solid #fff;
-  margin: 0 6px !important;
-  transition: background 0.3s, transform 0.3s;
-}
-.swiper-pagination-bullet-active {
-  background: #fff;
-  transform: scale(1.2);
-  box-shadow: 0 0 8px #fff8;
-}
+
 
 /* Animation with Scroll CSS */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.bento-item {
-  animation: bentoIn linear both;
-  animation-timeline: view();
-  animation-range: entry 10% cover 30%;
-}
-@keyframes bentoIn {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
