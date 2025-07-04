@@ -1,0 +1,57 @@
+---
+import { Clases } from 'data.json'
+---
+
+<section class="w-full px-8 flex flex-col items-center">
+  <div class="flex flex-col items-center mb-15 w-fit gap-3">
+    <h2 class="text-3xl md:text-5xl font-bold">Nuestras Clases</h2>
+    <div class="w-3/4 h-1 bg-gradient-to-l from-primary to-[#4079ff]"></div>
+    <p class="text-lg md:text-xl w-3/4 text-pretty tracking-wide text-center">
+      Ofrecemos una amplia variedad de programas diseñados para desarrollar tu
+      potencial artístico y físico
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8 w-full max-w-[1600px]">
+    {
+      Clases.map((clas) => {
+        return (
+          <article
+            class={`flex flex-col items-center gap-10 p-8 rounded-xl border shadow-lg hover:scale-105 transition-transform duration-300`}
+            style={`border: 1px solid ${clas.colors.primary}; background: linear-gradient(to bottom, ${clas.colors.primary}50, ${clas.colors.secondary}50);`}
+          >
+            <div class="flex-2 h-full max-h-64 rounded-xl w-full overflow-hidden">
+              <img src={clas.image} alt={clas.name} />
+            </div>
+            <div class="flex-1 flex flex-col justify-center gap-8">
+              <h3 class="text-2xl font-bold">{clas.name}</h3>
+              <p class="text-md text-text">{clas.subname}</p>
+              <p class="text-sm font-semibold">{clas.description}</p>
+            </div>
+          </article>
+        )
+      })
+    }
+  </div>
+</section>
+
+<style>
+  article {
+    animation: cardsIn linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes cardsIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      scale: 0.8;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      scale: 1;
+    }
+  }
+</style>

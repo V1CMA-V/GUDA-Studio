@@ -6,7 +6,7 @@ const isActive = (path: string) => pathname === path
 ---
 
 <header
-  class="fixed top-0 z-50 mx-auto flex h-20 w-full select-none items-center text-white sm:overflow-hidden"
+  class="fixed top-0 z-50 mx-auto flex h-20 w-full select-none px-24 items-center text-white sm:overflow-hidden"
 >
   <div class="relative flex justify-between px-6 py-4 md:w-full">
     <div class="w-24 h-auto">
@@ -15,7 +15,7 @@ const isActive = (path: string) => pathname === path
       </a>
     </div>
 
-    <nav>
+    <nav class="flex items-center justify-center">
       <ul class="flex gap-8 text-lg font-semibold" id="navContent">
         <li>
           <a

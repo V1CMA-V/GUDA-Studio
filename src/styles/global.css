@@ -1,16 +1,15 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-background: #fdf8f3;         /* Cremita claro, cálido y elegante */
-  --color-primary: #0a716f;           /* Verde institucional */
-  --color-text: #1c1c1c;              /* Texto principal, casi negro */
-  --color-secondary: #4f4f4f;         /* Texto secundario, gris medio */
-  --color-support-1: #7a503f;         /* Marrón rojizo, cálido, terroso */
-  --color-support-2: #d99e6a;         /* Beige dorado, elegante */
-  --color-background-cards: #eaf3f3;  /* Verde grisáceo muy claro, para tarjetas */
-  --color-emphasis: #b8494e;          /* Rojo vino suave, para llamados a la acción */
+  --color-background: #fdf8f3; /* Cremita claro, cálido y elegante */
+  --color-primary: #0a716f; /* Verde institucional */
+  --color-text: #1c1c1c; /* Texto principal, casi negro */
+  --color-secondary: #4f4f4f; /* Texto secundario, gris medio */
+  --color-support-1: #7a503f; /* Marrón rojizo, cálido, terroso */
+  --color-support-2: #d99e6a; /* Beige dorado, elegante */
+  --color-background-cards: #eaf3f3; /* Verde grisáceo muy claro, para tarjetas */
+  --color-emphasis: #b8494e; /* Rojo vino suave, para llamados a la acción */
 }
-
 
 body {
   background-color: var(--color-background);
@@ -28,27 +27,27 @@ img {
 
 strong {
   color: #0b6f6f;
-  font-weight: 600;
+  font-weight: bold;
 }
-
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
+
 ::-webkit-scrollbar-track {
-  background: transparent;
-  backdrop-filter: blur(10px);
+  background: var(--color-background-cards);
   border-radius: 5px;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
+  background: var(--color-primary);
   border-radius: 5px;
+  border: 2px solid var(--color-background);
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--color-emphasis);
 }
-
-
 
 /* Animation with Scroll CSS */

@@ -1,0 +1,42 @@
+---
+import GradientText from '@/components/GradientText.astro'
+---
+
+<section
+  class="w-full flex flex-col items-center gap-6 px-8 py-16 bg-gradient-to-t from-primary/20 via-background to-primary/20 text-center"
+>
+  <h2 class="text-3xl font-bold tracking-wide">
+    ¡Visita Nuestra Tienda Online!
+  </h2>
+  <p class="text-pretty text-text/80 text-lg w-full max-w-md mx-auto">
+    Descubre toda nuestra colección de productos oficiales. Envíos a toda la
+    República Mexicana.
+  </p>
+  <GradientText
+    colors={['#0a716f', '#4079ff', '#0a716f', '#4079ff', '#0a716f']}
+    animationSpeed={10}
+    showBorder={false}
+    className="text-xl"
+  >
+    ¡Estudiantes activos obtienen 15% de descuento!
+  </GradientText>
+  <div class="w-full max-w-md p-4 flex items-center justify-between">
+    <a
+      href="#"
+      class="px-3 py-1 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
+      >🛒Ir a la Tienda
+    </a>
+    <a
+      href="#"
+      class="px-3 py-1 text-xl text-text bg-transparent rounded-lg border border-text font-semibold hover:bg-text hover:text-white transition-colors duration-200"
+      >📱 Catálogo Whatsapp</a
+    >
+  </div>
+  <div class="w-full max-w-3xl p-4 text-left text-md text-text/80">
+    <ul class="w-full flex justify-between items-center gap-2">
+      <li>✅ Envío gratis en compras +$800</li>
+      <li>✅ Pagos seguros</li>
+      <li>✅ Garantía de calidad</li>
+    </ul>
+  </div>
+</section>

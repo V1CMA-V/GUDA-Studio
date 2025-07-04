@@ -1,126 +1,64 @@
 {
-  "Team": [
-    {
-      "id": 1,
-      "name": "Daniel",
-      "styles": ["Hip-hop", "R&B", "Trap"],
-      "image": "daniel1.webp"
-    },
-    {
-      "id": 2,
-      "name": "María",
-      "styles": ["Ballet", "Contemporáneo"],
-      "image": "img3.webp"
-    }
-  ],
   "Clases": [
     {
-      "slug": "hip-hop",
-      "name": "Hip-hop",
-      "description": "Un estilo urbano lleno de energía y ritmo.",
-      "image": "https://images.unsplash.com/photo-1548123378-bde4eca81d2d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "tags": ["team", "profile", "images"],
-      "Horarios": [
-        {
-          "day": "Lunes",
-          "time": "10:00 - 11:30"
-        },
-        {
-          "day": "Miércoles",
-          "time": "10:00 - 11:30"
-        }
-      ],
-      "coachID": 1
+      "image": "https://images.unsplash.com/photo-1533557252203-6ec9555fe200?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Baile Urbano",
+      "subname": "Hip Hop, Reggaeton, Breaking y más estilos urbanos.",
+      "description": "Domina los ritmos urbanas más populares con técnicas profesionales y estilo único.",
+      "colors": {
+        "primary": "#FF5733",
+        "secondary": "#C70039"
+      }
     },
     {
-      "slug": "jazz",
-      "name": "Jazz",
-      "description": "Un género musical que enfatiza la improvisación.",
-      "image": "https://images.unsplash.com/photo-1541804627596-3b5b9ef58c93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "tags": ["team", "profile", "images"],
-      "Horarios": [
-        {
-          "day": "Martes",
-          "time": "10:00 - 11:30"
-        },
-        {
-          "day": "Jueves",
-          "time": "10:00 - 11:30"
-        }
-      ],
-      "coachID": 2
+      "image": "https://images.unsplash.com/photo-1571208986310-dad726705a9f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Gimnasia Artística",
+      "subname": "Trabajo técnico especializado en cochonetas.",
+      "description": "Desarrolla fuerza, flexibilidad y control corporal con técnicas de gimnasia artística.",
+      "colors": {
+        "primary": "#FF6F61",
+        "secondary": "#6B5B95"
+      }
     },
     {
-      "slug": "ballet",
-      "name": "Ballet",
-      "description": "Una forma de danza clásica que combina técnica y arte.",
-      "image": "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?q=80&w=2010&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "tags": ["team", "profile", "images"],
-      "Horarios": [
-        {
-          "day": "Lunes",
-          "time": "12:00 - 13:30"
-        },
-        {
-          "day": "Miércoles",
-          "time": "12:00 - 13:30"
-        }
-      ],
-      "coachID": 1
+      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Entrenamiento Individual",
+      "subname": "Apratos, pesas y seguimiento personalizado.",
+      "description": "Programa personalizado con seguimiento técnico individual para maximizar tu potencial.",
+      "colors": {
+        "primary": "#4A90E2",
+        "secondary": "#50E3C2"
+      }
     },
     {
-      "slug": "contemporaneo",
-      "name": "Contemporáneo",
-      "description": "Un estilo de danza que se adapta a las tendencias actuales.",
-      "image": "https://plus.unsplash.com/premium_photo-1689885430776-bbefae37f993?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "tags": ["team", "profile", "images"],
-      "Horarios": [
-        {
-          "day": "Martes",
-          "time": "12:00 - 13:30"
-        },
-        {
-          "day": "Jueves",
-          "time": "12:00 - 13:30"
-        }
-      ],
-      "coachID": 2
+      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Stretching Y Movilidad",
+      "subname": "Flexibilidad, elongación y control corporal.",
+      "description": "Mejora tu flexibilidad y control corporal con técnicas especializadas de estiramiento.",
+      "colors": {
+        "primary": "#FF5733",
+        "secondary": "#C70039"
+      }
     },
     {
-      "slug": "rb",
-      "name": "R&B",
-      "description": "Un género musical que combina ritmo y blues.",
-      "image": "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&facepad=2",
-      "tags": ["team", "profile", "images"],
-      "Horarios": [
-        {
-          "day": "Lunes",
-          "time": "12:00 - 13:30"
-        },
-        {
-          "day": "Miércoles",
-          "time": "12:00 - 13:30"
-        }
-      ],
-      "coachID": 1
+      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Preparación Escénica",
+      "subname": "Formación profesional y crews de competencia.",
+      "description": "Prepárate para el escenario profesional y competencias con nuestro programa avanzado.",
+      "colors": {
+        "primary": "#1a1a1a",
+        "secondary": "#333333"
+      }
     },
     {
-      "slug": "trap",
-      "name": "Trap",
-      "description": "Un subgénero del hip-hop con ritmos pesados.",
-      "image": "https://images.unsplash.com/photo-1620281408936-b34691bbb34a?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "tags": ["team", "profile", "images"],
-      "Horarios": [
-        {
-          "day": "Martes",
-          "time": "12:00 - 13:30"
-        },
-        {
-          "day": "Jueves",
-          "time": "12:00 - 13:30"
-        }
-      ],
-      "coachID": 2
+      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Clases Híbridas",
+      "subname": "Fusión de danza y acrobacia.",
+      "description": "Combina danza y acrobacia para desarrollar control, ritmo y presencia escénica únicos.",
+      "colors": {
+        "primary": "#542663",
+        "secondary": "#4f2c54"
+      }
     }
   ]
 }
