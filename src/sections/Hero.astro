@@ -1,56 +1,126 @@
 ---
-import GradientText from '@/components/GradientText.astro'
+import GradientText from "@/components/GradientText.astro";
 ---
 
-<section class="">
+<div
+  class="relative h-dvh w-full max-w-[100vw] md:aspect-video md:h-[80vh] xl:h-dvh mb-28"
+>
   <div
-    class="w-full h-dvh max-w-6xl m-auto flex flex-col items-center justify-center gap-10"
+    class="absolute inset-0 h-full justify-center z-10 m-auto flex flex-col items-center w-full"
   >
-    <div
-      class="w-auto h-40 md:w-auto md:h-110 group flex flex-col items-center justify-center"
+    <section
+      class="absolute z-[100] justify-center items-center gap-3 flex flex-col"
     >
-      <h2
-        class="w-fit px-2 py-1 text-white bg-gradient-to-br from-primary to-text font-semibold text-lg md:text-2xl rounded-lg mb-2 group-hover:translate-y-3 transition-transform duration-200"
+      <div
+        class="w-auto h-40 md:h-70 md:w-auto group flex flex-col items-center justify-center"
       >
-        Alitxco, Puebla <span class="text-sm">MX</span>
-      </h2>
-      <img
-        src="logo-white.webp"
-        alt="Logo Guda Studio"
-        class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-200"
-      />
-    </div>
+        <h2
+          class="w-fit px-2 py-1 text-white bg-gradient-to-br from-primary to-text font-semibold text-lg md:text-2xl rounded-lg mb-2 group-hover:translate-y-3 transition-transform duration-200"
+        >
+          Alitxco, Puebla <span class="text-sm">MX</span>
+        </h2>
+        <img
+          id="logo"
+          src="logo-white.webp"
+          alt="Logo Guda Studio"
+          class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-200"
+        />
+      </div>
 
-    <p class="text-2xl md:text-3xl text-center font-semibold text-white">
-      Donde el arte del movimiento se fusiona con el desarrollo físico y
-      técnico.
-    </p>
-    <GradientText
-      colors={['#0a716f', '#4079ff', '#0a716f', '#4079ff', '#0a716f']}
-      animationSpeed={10}
-      showBorder={false}
-      className="text-4xl"
-    >
-      Transformamos pasión en excelencia artística.
-    </GradientText>
+      <p class="text-2xl md:text-3xl text-center font-semibold text-white">
+        Donde el arte del movimiento se fusiona con el desarrollo físico y
+        técnico.
+      </p>
+      <GradientText
+        colors={["#0a716f", "#4079ff", "#0a716f", "#4079ff", "#0a716f"]}
+        animationSpeed={10}
+        showBorder={false}
+        className="text-3xl md:text-4xl text-center text-balance"
+      >
+        Transformamos pasión en excelencia artística.
+      </GradientText>
 
-    <div class="flex flex-col md:flex-row gap-10 items-center">
-      <a
-        href="#"
-        class="px-5 py-2 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
-        >Comienza Tu Entrenamiento</a
-      >
-      <a
-        href="#"
-        class="px-5 py-2 text-xl text-white bg-transparent rounded-lg border border-white font-semibold hover:bg-white hover:text-primary transition-colors duration-200"
-        >Conoce Nuestras Clases</a
-      >
-    </div>
+      <div class="flex flex-col md:flex-row md:gap-10 gap-4 items-center mt-12">
+        <a
+          href="#"
+          class="px-5 py-2 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
+          >Comienza Tu Entrenamiento</a
+        >
+        <a
+          href="#"
+          class="px-5 py-2 text-xl text-white bg-transparent rounded-lg border border-white font-semibold hover:bg-white hover:text-primary transition-colors duration-200"
+          >Conoce Nuestras Clases</a
+        >
+      </div>
+    </section>
   </div>
 
-  <div class="absolute inset-0 w-full h-full overflow-hidden -z-30">
-    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent">
-    </div>
-    <video src="/videos/hero.mp4" autoplay loop muted></video>
-  </div>
-</section>
+  <!-- Fondo negro  -->
+  <div class="absolute inset-0 h-full w-full bg-black/50 z-0"></div>
+  <!-- Video principal de fondo -->
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+    class="video-main hidden h-full w-full object-cover object-top animate-duration-500 animate-ease-in-out"
+  >
+    <source src="/videos/hero.mp4" type="video/mp4" />
+  </video>
+  <!-- Video de movimiento -->
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+    class="video-blur hidden absolute -bottom-28 -z-40 blur-3xl animate-duration-500 animate-ease-in-out"
+  >
+    <source src="/videos/hero.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<style>
+  #logo {
+    animation: logo-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes logo-glow {
+    0% {
+      filter: drop-shadow(0 0 6px #14b8a6) drop-shadow(0 0 1px #fff);
+    }
+    50% {
+      filter: drop-shadow(0 0 12px #14b8a6) drop-shadow(0 0 2px #fff);
+    }
+    100% {
+      filter: drop-shadow(0 0 6px #14b8a6) drop-shadow(0 0 1px #fff);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainVideo = document.querySelector(".video-main");
+    const blurVideo = document.querySelector(".video-blur");
+
+    const showVideos = () => {
+      if (mainVideo instanceof HTMLMediaElement) {
+        mainVideo.classList.remove("hidden");
+        mainVideo.classList.add("animate-fade");
+      }
+      if (blurVideo instanceof HTMLMediaElement) {
+        blurVideo.classList.remove("hidden");
+        blurVideo.classList.add("animate-fade");
+      }
+    };
+
+    if (mainVideo instanceof HTMLMediaElement) {
+      if (mainVideo.readyState >= 3) {
+        showVideos();
+      } else {
+        mainVideo.addEventListener("loadeddata", showVideos);
+      }
+    }
+  });
+</script>

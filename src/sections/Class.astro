@@ -1,5 +1,5 @@
 ---
-import { Clases } from 'data.json'
+import { Clases } from "data.json";
 ---
 
 <section class="w-full px-8 flex flex-col items-center">
@@ -14,22 +14,49 @@ import { Clases } from 'data.json'
 
   <div class="grid md:grid-cols-3 gap-8 w-full max-w-[1600px]">
     {
-      Clases.map((clas) => {
+      Clases.map((clas, idx) => {
         return (
           <article
-            class={`flex flex-col items-center gap-10 p-8 rounded-xl border shadow-lg hover:scale-105 transition-transform duration-300`}
-            style={`border: 1px solid ${clas.colors.primary}; background: linear-gradient(to bottom, ${clas.colors.primary}50, ${clas.colors.secondary}50);`}
+            class={`relative flex flex-col items-center gap-8 p-8 rounded-2xl transition-all duration-300 group card-animate hover:scale-105`}
+            style={`--card-color: ${clas.colors.primary}; --card-color2: ${clas.colors.secondary}; animation-delay: ${idx * 80}ms;`}
           >
-            <div class="flex-2 h-full max-h-64 rounded-xl w-full overflow-hidden">
-              <img src={clas.image} alt={clas.name} />
+            {/* Borde animado */}
+            <span class="pointer-events-none absolute inset-0 rounded-2xl border-2 border-[var(--card-color)] transition-all duration-300 group-hover:border-[var(--card-color2)] group-hover:shadow-[0_0_24px_0_var(--card-color2)] z-0 card-border" />
+            <div class="relative flex-2 h-full max-h-64 rounded-xl w-full overflow-hidden z-10">
+              <img
+                src={clas.image}
+                alt={clas.name}
+                class="object-cover w-full h-full rounded-xl duration-300 group-hover:scale-110 border-2 border-[var(--card-color2)]"
+              />
             </div>
-            <div class="flex-1 flex flex-col justify-center gap-8">
-              <h3 class="text-2xl font-bold">{clas.name}</h3>
-              <p class="text-md text-text">{clas.subname}</p>
-              <p class="text-sm font-semibold">{clas.description}</p>
+            <div class="flex-1 flex flex-col justify-center gap-4 z-10">
+              <h3 class="text-2xl font-bold text-center text-[var(--card-color)] tracking-widest transition-all duration-200">
+                {clas.name}
+              </h3>
+              <p class="text-md text-center">{clas.subname}</p>
+              <p class="text-sm font-semibold text-center">
+                {clas.description}
+              </p>
+            </div>
+
+            <div class="flex items-center gap-4 md:flex-row flex-col">
+              <a
+                href="#"
+                class="px-5 py-3 text-lg text-white bg-gradient-to-l from-[var(--card-color)] to-[var(--card-color2)] font-semibold rounded-lg hover:from-[var(--card-color2)] hover:to-[var(--card-color)] transition-colors duration-200"
+                style="animation-delay: 0.2s"
+              >
+                Reservar
+              </a>
+              <a
+                href="#"
+                class="px-5 py-3 text-lg text-[var(--card-color)] border-2 border-[var(--card-color)] bg-white font-semibold rounded-lg hover:bg-[var(--card-color)] hover:text-white transition-colors duration-200"
+                style="animation-delay: 0.4s"
+              >
+                Ver más
+              </a>
             </div>
           </article>
-        )
+        );
       })
     }
   </div>
@@ -37,21 +64,41 @@ import { Clases } from 'data.json'
 
 <style>
   article {
-    animation: cardsIn linear both;
+    background: transparent;
+    animation: cardsIn 0.8s cubic-bezier(0.36, 1.5, 0.5, 1) both;
     animation-timeline: view();
     animation-range: entry 10% cover 30%;
   }
-
   @keyframes cardsIn {
     0% {
       opacity: 0;
-      transform: translateY(20px);
-      scale: 0.8;
+      transform: translateY(20px) scale(0.92);
+      filter: blur(8px);
     }
     100% {
       opacity: 1;
-      transform: translateY(0);
-      scale: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
     }
+  }
+
+  article:hover {
+    h3 {
+      text-shadow:
+        0 0 15px var(--card-color),
+        0 0 20px var(--card-color),
+        0 0 25px var(--card-color);
+    }
+  }
+
+  .card-border {
+    box-shadow: 0 0 0 0 var(--card-color2, transparent);
+    transition:
+      border-color 0.3s,
+      box-shadow 0.3s;
+  }
+  .group:hover .card-border {
+    border-color: var(--card-color2, #4079ff);
+    box-shadow: 0 0 16px 0 var(--card-color2, #4079ff);
   }
 </style>

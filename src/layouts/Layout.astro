@@ -1,15 +1,15 @@
 ---
-import Footer from '@/sections/Footer.astro'
-import Header from '@/sections/Header.astro'
+import Footer from "@/sections/Footer.astro";
+import Header from "@/sections/Header.astro";
 
-import '@/styles/global.css'
+import "@/styles/global.css";
 
 interface Props {
-  title?: string
-  description?: string
+  title?: string;
+  description?: string;
 }
 
-const { title, description } = Astro.props as Props
+const { title, description } = Astro.props as Props;
 ---
 
 <!doctype html>
@@ -17,12 +17,9 @@ const { title, description } = Astro.props as Props
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo-white.webp" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-
-    <!-- Estilos de Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <title>{title}</title>
   </head>

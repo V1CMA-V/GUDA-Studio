@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-background: #fdf8f3; /* Cremita claro, cálido y elegante */
@@ -48,6 +48,11 @@ strong {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-emphasis);
+}
+
+/* Effect glow text header */
+@utility glow-text {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
 }
 
 /* Animation with Scroll CSS */

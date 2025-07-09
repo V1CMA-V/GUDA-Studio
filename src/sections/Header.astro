@@ -1,8 +1,8 @@
 ---
-const { pathname } = Astro.url
+const { pathname } = Astro.url;
 
 // Resaltar la clase activa en el menú de navegación
-const isActive = (path: string) => pathname === path
+const isActive = (path: string) => pathname === path;
 ---
 
 <header
@@ -15,40 +15,43 @@ const isActive = (path: string) => pathname === path
       </a>
     </div>
 
-    <nav class="flex items-center justify-center">
-      <ul class="flex gap-8 text-lg font-semibold" id="navContent">
+    <nav class="hidden md:flex items-center justify-between">
+      <ul
+        class="flex gap-8 text-lg font-semibold tracking-widest items-center justify-between"
+        id="navContent"
+      >
         <li>
           <a
             href="/"
-            class=`${isActive('/') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            class=`${isActive('/') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
             >Inicio</a
           >
         </li>
         <li>
           <a
             href="/about"
-            class=`${isActive('/about') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            class=`${isActive('/about') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
             >Sobre Nosotros</a
           >
         </li>
         <li>
           <a
             href="/classes"
-            class=`${isActive('/classes') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            class=`${isActive('/classes') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
             >Clases</a
           >
         </li>
         <li>
           <a
             href="/crew"
-            class=`${isActive('/crew') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            class=`${isActive('/crew') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
             >Equipo</a
           >
         </li>
         <li>
           <a
             href="/contact"
-            class=`${isActive('/contact') ? 'text-primary font-bold text-2xl' : 'text-white'} hover:text-primary`
+            class=`${isActive('/contact') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
             >Contacto</a
           >
         </li>
@@ -59,7 +62,7 @@ const isActive = (path: string) => pathname === path
       <a
         href="#"
         class="px-5 py-3 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
-        >Ver tienda</a
+        >Reservar</a
       >
     </div>
   </div>
