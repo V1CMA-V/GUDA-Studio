@@ -9,13 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.1",
-    "@fontsource-variable/league-spartan": "^5.2.5",
-    "@fontsource/bilbo-swash-caps": "^5.2.5",
-    "@fontsource/poppins": "^5.2.6",
-    "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.8.1",
-    "gsap": "^3.13.0",
-    "tailwindcss": "^4.1.8"
+    "@astrojs/vercel": "8.2.1",
+    "@fontsource/poppins": "5.2.6",
+    "@tailwindcss/vite": "4.1.11",
+    "astro": "5.11.0",
+    "gsap": "3.13.0",
+    "tailwindcss": "4.1.11"
   }
 }
