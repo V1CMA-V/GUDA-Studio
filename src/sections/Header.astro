@@ -1,4 +1,6 @@
 ---
+import ButtonRegister from "@/components/ButtonRegister.astro";
+
 const { pathname } = Astro.url;
 
 // Resaltar la clase activa en el menú de navegación
@@ -9,9 +11,13 @@ const isActive = (path: string) => pathname === path;
   class="fixed top-0 z-50 mx-auto flex items-center h-24 w-full select-none md:px-24 text-white sm:overflow-hidden"
 >
   <div class="relative flex justify-between w-full items-center px-6 py-4">
-    <div class="w-24 h-auto">
-      <a href="/" class="flex items-center gap-2">
-        <img src="/logo-white.webp" alt="Logo Guda Studio" />
+    <div class="w-24 h-auto flex flex-col items-center justify-center">
+      <a href="/" class="flex items-center gap-2 group logo-hover">
+        <img
+          src="/logo-white.webp"
+          alt="Logo Guda Studio"
+          class="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 drop-shadow-lg"
+        />
       </a>
     </div>
 
@@ -53,11 +59,10 @@ const isActive = (path: string) => pathname === path;
     </nav>
 
     <div class="flex items-center gap-4">
-      <a
-        href="#"
-        class="px-5 py-3 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
-        >Reservar</a
-      >
+      <!-- Botón Inscríbete -->
+      <div class="hidden md:block">
+        <ButtonRegister />
+      </div>
       <!-- Botón hamburguesa solo en mobile -->
       <button
         id="mobileMenuBtn"
@@ -77,6 +82,7 @@ const isActive = (path: string) => pathname === path;
     </div>
   </div>
 </header>
+
 <!-- Overlay y menú móvil -->
 <nav
   id="mobileOverlay"
@@ -123,11 +129,7 @@ const isActive = (path: string) => pathname === path;
       >
     </li>
 
-    <a
-      href="#"
-      class="px-5 py-3 text-3xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary w-full text-center transition-colors duration-200 animate-line"
-      >Reservar</a
-    >
+    <ButtonRegister isBig />
   </ul>
 </nav>
 
@@ -174,6 +176,16 @@ const isActive = (path: string) => pathname === path;
     border-bottom: 1px solid transparent;
   }
 
+  .logo-hover img {
+    transition:
+      transform 0.3s cubic-bezier(0.4, 2, 0.4, 1),
+      filter 0.2s;
+  }
+  .logo-hover:hover img {
+    filter: drop-shadow(0 2px 12px #4079ff90);
+    transform: scale(1.13) rotate(-6deg);
+  }
+
   @keyframes header-blur-scroll {
     0% {
       backdrop-filter: blur(0px);
@@ -200,9 +212,5 @@ const isActive = (path: string) => pathname === path;
     transition:
       translate 0.3s ease-in-out,
       visibility 0.3s;
-  }
-
-  .logo-glow-teal {
-    filter: drop-shadow(0 0 6px #14b8a6) drop-shadow(0 0 1px #fff);
   }
 </style>
