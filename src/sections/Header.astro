@@ -49,13 +49,6 @@ const isActive = (path: string) => pathname === path;
             >Tienda</a
           >
         </li>
-        <li>
-          <a
-            href="/contact"
-            class=`${isActive('/contact') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
-            >Contacto</a
-          >
-        </li>
       </ul>
     </nav>
 
@@ -129,13 +122,7 @@ const isActive = (path: string) => pathname === path;
         >Tienda</a
       >
     </li>
-    <li>
-      <a
-        href="/contact"
-        class=`${isActive('/contact') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line `
-        >Contacto</a
-      >
-    </li>
+
     <a
       href="#"
       class="px-5 py-3 text-3xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary w-full text-center transition-colors duration-200 animate-line"
