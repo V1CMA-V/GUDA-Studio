@@ -11,13 +11,16 @@
   --color-emphasis: #b8494e; /* Rojo vino suave, para llamados a la acción */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   overflow-x: hidden;
 
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
 }
 
 img {
