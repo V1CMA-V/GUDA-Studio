@@ -14,35 +14,39 @@ import TitleSection from "@/components/TitleSection.astro";
     <div
       class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[220px]"
     >
-      <div class="col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg">
+      <div
+        class="images-animation col-span-2 row-span-2 rounded-xl overflow-hidden shadow-lg"
+      >
         <img
           src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80"
           alt="Foto principal"
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="rounded-xl overflow-hidden shadow-md">
+      <div class="images-animation rounded-xl overflow-hidden shadow-md">
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80"
           alt="Foto secundaria"
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="rounded-xl overflow-hidden shadow-md">
+      <div class="images-animation rounded-xl overflow-hidden shadow-md">
         <img
           src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=80"
           alt="Foto secundaria"
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="col-span-2 rounded-xl overflow-hidden shadow-md">
+      <div
+        class="images-animation col-span-2 rounded-xl overflow-hidden shadow-md"
+      >
         <img
           src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&q=80"
           alt="Foto horizontal"
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="rounded-xl overflow-hidden shadow-md">
+      <div class="images-animation rounded-xl overflow-hidden shadow-md">
         <img
           src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&q=80"
           alt="Foto secundaria"
@@ -52,3 +56,22 @@ import TitleSection from "@/components/TitleSection.astro";
     </div>
   </div>
 </section>
+
+<style>
+  .images-animation {
+    animation: up-images linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes up-images {
+    from {
+      opacity: 0;
+      transform: translateY(90px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

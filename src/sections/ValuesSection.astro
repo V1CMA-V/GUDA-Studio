@@ -6,88 +6,346 @@ import TitleSection from "@/components/TitleSection.astro";
   <div class="max-w-4xl mx-auto flex flex-col gap-8 items-center">
     <TitleSection title="Misión, Visión y Objetivos" />
 
-    <div class="mb-10">
-      <h3 class="text-2xl font-bold text-primary mb-2">Misión</h3>
-      <p class="text-lg text-gray-700">
-        Formar artistas integrales a través de la enseñanza profesional del
-        baile urbano, la gimnasia y el entrenamiento físico, impulsando la
-        expresión, la disciplina y el desarrollo técnico de cada alumno.
-        Promovemos un espacio inclusivo y motivador que reconoce y potencia las
-        habilidades individuales, brindando experiencias de aprendizaje de alto
-        nivel que transforman cuerpo, mente y espíritu.
-      </p>
-    </div>
-
-    <div class="mb-10">
-      <h3 class="text-2xl font-bold text-primary mb-2">Visión</h3>
-      <p class="text-lg text-gray-700">
-        Ser un referente en Atlixco y a nivel nacional en la formación de
-        bailarines y atletas escénicos, ofreciendo un modelo de entrenamiento
-        innovador que fusiona arte, técnica y bienestar. Aspiramos a transformar
-        vidas a través de la danza y el movimiento, construyendo una comunidad
-        creativa, disciplinada y apasionada que represente a México con orgullo
-        en escenarios locales e internacionales.
-      </p>
-    </div>
-
-    <div class="mb-10">
-      <h3 class="text-2xl font-bold text-primary mb-2">Objetivos Generales</h3>
-      <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
-        <li>
-          Brindar formación artística integral en danza urbana, gimnasia y
-          entrenamiento físico, desarrollando tanto el talento como la condición
-          corporal de cada alumno.
-        </li>
-        <li>
-          Posicionar a Gudas Studio como un referente de excelencia y evolución
-          constante en el ámbito del arte escénico y la preparación física en
-          Atlixco y a nivel nacional.
-        </li>
-      </ul>
-    </div>
-
-    <!-- Bento grid de valores -->
-    <div class="mt-16 w-full grid grid-cols-2 md:grid-cols-4 gap-4 bento-grid">
-      <div
-        class="bento-item col-span-2 md:col-span-2 row-span-1 bg-primary/90 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Disciplina
+    <div id="values" class="grid grid-cols-9 gap-x-4">
+      <!-- Columna de timeline -->
+      <div class="col-span-1 flex flex-col items-center relative">
+        <div
+          id="timeline-bar"
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[8px] h-full bg-gradient-to-b from-primary to-[#4079ff] rounded-full z-0"
+        >
+        </div>
+        <div class="timeline-dot mt-0 bg-primary z-10"></div>
+        <div class="flex-1"></div>
+        <div class="timeline-dot bg-primary z-10"></div>
+        <div class="flex-1"></div>
+        <div class="timeline-dot mb-0 bg-primary z-10"></div>
       </div>
-      <div
-        class="bento-item col-span-1 md:col-span-1 row-span-1 bg-[#4079ff] text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Expresión
-      </div>
-      <div
-        class="bento-item col-span-1 md:col-span-1 row-span-2 bg-primary/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Inclusión
-      </div>
-      <div
-        class="bento-item col-span-2 md:col-span-2 row-span-1 bg-[#14b8a6] text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Innovación
-      </div>
-      <div
-        class="bento-item col-span-1 md:col-span-1 row-span-1 bg-primary/90 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Pasión
-      </div>
-      <div
-        class="bento-item col-span-1 md:col-span-1 row-span-1 bg-[#4079ff]/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Técnica
-      </div>
-      <div
-        class="bento-item col-span-2 md:col-span-2 row-span-1 bg-[#14b8a6]/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Comunidad
-      </div>
-      <div
-        class="bento-item col-span-1 md:col-span-1 row-span-1 bg-primary/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
-      >
-        Excelencia
+      <!-- Contenido de los valores -->
+      <div class="col-span-8 flex flex-col gap-16">
+        <!-- Misión -->
+        <div class="timeline-item" id="item-mision">
+          <h3 class="text-2xl font-bold text-primary mb-2">Misión</h3>
+          <p class="text-lg text-gray-700 text-balance">
+            Formar artistas integrales a través de la enseñanza profesional del
+            baile urbano, la gimnasia y el entrenamiento físico, impulsando la
+            expresión, la disciplina y el desarrollo técnico de cada alumno.
+            Promovemos un espacio inclusivo y motivador que reconoce y potencia
+            las habilidades individuales, brindando experiencias de aprendizaje
+            de alto nivel que transforman cuerpo, mente y espíritu.
+          </p>
+        </div>
+        <!-- Visión -->
+        <div class="timeline-item" id="item-vision">
+          <h3 class="text-2xl font-bold text-primary mb-2">Visión</h3>
+          <p class="text-lg text-gray-700 text-balance">
+            Ser un referente en Atlixco y a nivel nacional en la formación de
+            bailarines y atletas escénicos, ofreciendo un modelo de
+            entrenamiento innovador que fusiona arte, técnica y bienestar.
+            Aspiramos a transformar vidas a través de la danza y el movimiento,
+            construyendo una comunidad creativa, disciplinada y apasionada que
+            represente a México con orgullo en escenarios locales e
+            internacionales.
+          </p>
+        </div>
+        <!-- Objetivos -->
+        <div class="timeline-item" id="item-objetivos">
+          <h3 class="text-2xl font-bold text-primary mb-2">
+            Objetivos Generales
+          </h3>
+          <ul class="text-lg text-gray-700 space-y-2">
+            <li>
+              <strong class="text-primary font-bold mr-2">-</strong> Brindar formación
+              artística integral en danza urbana, gimnasia y entrenamiento físico,
+              desarrollando tanto el talento como la condición corporal de cada alumno.
+            </li>
+            <li>
+              <strong class="text-primary font-bold mr-2">-</strong> Posicionar a
+              Gudas Studio como un referente de excelencia y evolución constante
+              en el ámbito del arte escénico y la preparación física en Atlixco y
+              a nivel nacional.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Bento grid de valores -->
+  <div
+    class="mt-16 w-full grid grid-cols-2 md:grid-cols-4 gap-4 bento-grid glass-bg p-4 rounded-2xl border border-white/20 backdrop-blur-md"
+  >
+    <div
+      class="bento-item col-span-2 md:col-span-2 row-span-1 bg-primary/90 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Disciplina: reloj/tiempo -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><circle cx="12" cy="12" r="10" stroke-width="2.2"></circle><path
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 6v6l4 2"></path></svg
+        >
+      </span>
+      <span class="align-middle">Disciplina</span>
+    </div>
+    <div
+      class="bento-item col-span-1 md:col-span-1 row-span-1 bg-[#4079ff] text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Expresión: cara feliz -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><circle cx="12" cy="12" r="10" stroke-width="2.2"></circle><path
+            d="M8 15s1.5 2 4 2 4-2 4-2"
+            stroke-width="2"
+            stroke-linecap="round"></path><circle
+            cx="9"
+            cy="10"
+            r="1"
+            fill="currentColor"></circle><circle
+            cx="15"
+            cy="10"
+            r="1"
+            fill="currentColor"></circle></svg
+        >
+      </span>
+      <span class="align-middle">Expresión</span>
+    </div>
+    <div
+      class="bento-item col-span-1 md:col-span-1 row-span-2 bg-primary/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Inclusión: personas/unión -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><circle cx="8" cy="12" r="3" stroke-width="2"></circle><circle
+            cx="16"
+            cy="12"
+            r="3"
+            stroke-width="2"></circle><path
+            d="M5 19c1-2 6-2 7-2s6 0 7 2"
+            stroke-width="2"
+            stroke-linecap="round"></path></svg
+        >
+      </span>
+      <span class="align-middle">Inclusión</span>
+    </div>
+    <div
+      class="bento-item col-span-2 md:col-span-2 row-span-1 bg-[#14b8a6] text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Innovación: bombilla -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><path
+            d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.5-1.5 4.5-3 6s-3 3.5-3 3.5S9 15.5 7.5 13A7 7 0 0 1 12 2Z"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path></svg
+        >
+      </span>
+      <span class="align-middle">Innovación</span>
+    </div>
+    <div
+      class="bento-item col-span-1 md:col-span-1 row-span-1 bg-primary/90 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Pasión: corazón -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><path
+            d="M12 21s-6-4.35-9-7.5A5.5 5.5 0 0 1 12 4.5a5.5 5.5 0 0 1 9 9C18 16.65 12 21 12 21Z"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path></svg
+        >
+      </span>
+      <span class="align-middle">Pasión</span>
+    </div>
+    <div
+      class="bento-item col-span-1 md:col-span-1 row-span-1 bg-[#4079ff]/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Técnica: engranaje -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><circle cx="12" cy="12" r="3" stroke-width="2"></circle><path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 9 5.1V5a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c0 .66.39 1.25 1 1.51h.09A2 2 0 0 1 21 12a2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path></svg
+        >
+      </span>
+      <span class="align-middle">Técnica</span>
+    </div>
+    <div
+      class="bento-item col-span-2 md:col-span-2 row-span-1 bg-[#14b8a6]/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center border-b border-white/10 md:border-b-0 md:border-r"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Comunidad: grupo de personas -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><circle cx="7" cy="12" r="3" stroke-width="2"></circle><circle
+            cx="17"
+            cy="12"
+            r="3"
+            stroke-width="2"></circle><circle
+            cx="12"
+            cy="7"
+            r="3"
+            stroke-width="2"></circle><path
+            d="M2 19c1-2 6-2 7-2s6 0 7 2"
+            stroke-width="2"
+            stroke-linecap="round"></path><path
+            d="M7 15c1-2 6-2 7-2s6 0 7 2"
+            stroke-width="2"
+            stroke-linecap="round"></path></svg
+        >
+      </span>
+      <span class="align-middle">Comunidad</span>
+    </div>
+    <div
+      class="bento-item col-span-1 md:col-span-1 row-span-1 bg-primary/80 text-white rounded-xl p-6 text-center font-bold shadow-lg text-xl flex items-center justify-center"
+    >
+      <span class="bento-icon inline-block mr-2 align-middle">
+        <!-- Excelencia: estrella -->
+        <svg
+          width="26"
+          height="26"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></polygon></svg
+        >
+      </span>
+      <span class="align-middle">Excelencia</span>
+    </div>
+  </div>
 </section>
+
+<style>
+  #timeline-bar {
+    transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .timeline-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #4079ff30;
+    background: #4079ff;
+  }
+  .bento-item {
+    transition:
+      transform 0.2s cubic-bezier(0.4, 2, 0.4, 1),
+      box-shadow 0.2s;
+    cursor: pointer;
+    will-change: transform, box-shadow;
+    position: relative;
+    border-radius: 1rem;
+    border: none;
+    background-clip: padding-box;
+  }
+  .bento-item:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 8px 32px 0 rgba(64, 121, 255, 0.18);
+    z-index: 2;
+  }
+  .bento-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.4, 1);
+    display: inline-block;
+  }
+  .bento-item:hover .bento-icon {
+    transform: scale(1.18) rotate(-8deg);
+    filter: drop-shadow(0 2px 8px #4079ff50);
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animar la barra de timeline
+  gsap.fromTo(
+    "#timeline-bar",
+    { height: "0%" },
+    {
+      height: "100%",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#values",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    }
+  );
+
+  // Animar cada bloque de texto
+  gsap.utils.toArray(".timeline-item").forEach((item, i) => {
+    if (item instanceof Element) {
+      gsap.from(item, {
+        opacity: 0,
+        y: 60,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: item,
+          start: "top 80%",
+          end: "top 60%",
+          scrub: true,
+        },
+        delay: i * 0.1,
+      });
+    }
+  });
+
+  // Animar bento grid de valores
+  gsap.from(".bento-item", {
+    opacity: 0,
+    y: 40,
+    scale: 0.85,
+    duration: 0.7,
+    stagger: 0.15,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".bento-grid",
+      start: "top 80%",
+      toggleActions: "play none none none",
+    },
+  });
+</script>
