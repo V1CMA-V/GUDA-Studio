@@ -60,5 +60,37 @@
         "secondary": "#4f2c54"
       }
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sudadera GUDAS black",
+      "price": 550,
+      "currency": "MXN",
+      "stock": 10,
+      "image": "images/products/IMG_7869.webp",
+      "description": "Sudadera de algodón 100% con logotipo GUDAS Studio en el pecho y espalda.",
+      "category": "Sudaderas"
+    },
+    {
+      "id": 2,
+      "name": "Playera GUDAS white",
+      "price": 350,
+      "currency": "MXN",
+      "stock": 2,
+      "image": "images/products/IMG_7870.webp",
+      "description": "Playera de algodón 100% con logotipo GUDAS Studio en el pecho.",
+      "category": "Playeras"
+    },
+    {
+      "id": 3,
+      "name": "Sudadera GUDAS grey",
+      "price": 600,
+      "currency": "MXN",
+      "stock": 12,
+      "image": "images/products/IMG_7872.webp",
+      "description": "Sudadera de algodón 100% con logotipo GUDAS Studio en el pecho y espalda.",
+      "category": "Sudaderas"
+    }
   ]
 }

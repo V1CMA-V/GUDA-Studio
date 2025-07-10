@@ -1,0 +1,18 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutCTA from "@/sections/AboutCTA.astro";
+import ProductsGrid from "@/sections/ProductsGrid.astro";
+import ShopHero from "@/sections/ShopHero.astro";
+
+// Puedes importar productos desde un archivo externo
+import { products } from "data.json";
+---
+
+<Layout
+  title="Tienda | GUDAS Studio"
+  description="Compra productos oficiales, ropa y accesorios exclusivos de Gudas Studio."
+>
+  <ShopHero />
+  <ProductsGrid productos={products} />
+  <AboutCTA />
+</Layout>
