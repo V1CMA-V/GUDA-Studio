@@ -117,8 +117,8 @@ const isActive = (path: string) => pathname === path;
     </li>
     <li>
       <a
-        href="/"
-        class=`${isActive('/') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
+        href="/shop"
+        class=`${isActive('/shop') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
         >Tienda</a
       >
     </li>
@@ -162,9 +162,7 @@ const isActive = (path: string) => pathname === path;
   mobileMenuBtn?.addEventListener("click", toggleMenu);
   mobileMenuClose?.addEventListener("click", toggleMenu);
 
-  mobileOverlay?.addEventListener("click", (e) => {
-    if (e.target === mobileOverlay) toggleMenu();
-  });
+  mobileOverlay?.addEventListener("click", toggleMenu);
 </script>
 
 <style>
