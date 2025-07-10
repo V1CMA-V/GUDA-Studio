@@ -6,15 +6,16 @@ const isActive = (path: string) => pathname === path;
 ---
 
 <header
-  class="fixed top-0 z-50 mx-auto flex h-20 w-full select-none px-24 items-center text-white sm:overflow-hidden"
+  class="fixed top-0 z-50 mx-auto flex items-center h-24 w-full select-none md:px-24 text-white sm:overflow-hidden"
 >
-  <div class="relative flex justify-between px-6 py-4 md:w-full">
+  <div class="relative flex justify-between w-full items-center px-6 py-4">
     <div class="w-24 h-auto">
       <a href="/" class="flex items-center gap-2">
         <img src="/logo-white.webp" alt="Logo Guda Studio" />
       </a>
     </div>
 
+    <!-- Menú desktop -->
     <nav class="hidden md:flex items-center justify-between">
       <ul
         class="flex gap-8 text-lg font-semibold tracking-widest items-center justify-between"
@@ -64,9 +65,120 @@ const isActive = (path: string) => pathname === path;
         class="px-5 py-3 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
         >Reservar</a
       >
+      <!-- Botón hamburguesa solo en mobile -->
+      <button
+        id="mobileMenuBtn"
+        class="md:hidden flex flex-col gap-1.5 p-2 rounded focus:outline-none group"
+        aria-label="Abrir menú"
+      >
+        <span
+          class="block w-7 h-1 rounded bg-primary transition-all group-hover:bg-text"
+        ></span>
+        <span
+          class="block w-7 h-1 rounded bg-primary transition-all group-hover:bg-text"
+        ></span>
+        <span
+          class="block w-7 h-1 rounded bg-primary transition-all group-hover:bg-text"
+        ></span>
+      </button>
     </div>
   </div>
 </header>
+<!-- Overlay y menú móvil -->
+<nav
+  id="mobileOverlay"
+  class="fixed inset-0 backdrop-blur-md bg-black/70 z-[99] h-screen w-full translate-x-full"
+>
+  <!-- Exit button -->
+  <button
+    id="mobileMenuClose"
+    class="absolute top-5 right-6 text-6xl font-bold text-primary"
+    >&times;</button
+  >
+
+  <!-- Navigation -->
+  <ul
+    id="mobileMenu"
+    class="flex flex-col items-start px-12 gap-12 justify-center h-full text-white tracking-widest"
+  >
+    <li>
+      <a
+        href="/"
+        class=`${isActive('/') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
+        >Inicio</a
+      >
+    </li>
+    <li>
+      <a
+        href="/about"
+        class=`${isActive('/about') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
+        >Sobre Nosotros</a
+      >
+    </li>
+    <li>
+      <a
+        href="/classes"
+        class=`${isActive('/classes') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
+        >Clases</a
+      >
+    </li>
+    <li>
+      <a
+        href="/crew"
+        class=`${isActive('/crew') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
+        >Equipo</a
+      >
+    </li>
+    <li>
+      <a
+        href="/contact"
+        class=`${isActive('/contact') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line `
+        >Contacto</a
+      >
+    </li>
+    <a
+      href="#"
+      class="px-5 py-3 text-3xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary w-full text-center transition-colors duration-200 animate-line"
+      >Reservar</a
+    >
+  </ul>
+</nav>
+
+<script>
+  import { gsap } from "gsap";
+  import { SplitText } from "gsap/SplitText";
+  gsap.registerPlugin(SplitText);
+
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenuClose = document.getElementById("mobileMenuClose");
+  const mobileOverlay = document.getElementById("mobileOverlay");
+  const menuOptions = document.querySelectorAll(".animate-line");
+
+  // Timeline ---------------------------------------------------
+  const tl = gsap
+    .timeline({
+      paused: true,
+      defaults: { ease: "power2.out" },
+    })
+    .set(mobileOverlay, { x: "100%" })
+    .fromTo(
+      mobileOverlay,
+      { opacity: 0, x: "100%" },
+      { opacity: 1, x: "0%", duration: 0.5 }
+    )
+    .from(menuOptions, { opacity: 0, y: 60, stagger: 0.07 }, "-=0.25");
+
+  function toggleMenu() {
+    tl.reversed() ? tl.play() : tl.reverse();
+  }
+
+  mobileMenuBtn?.addEventListener("click", toggleMenu);
+  mobileMenuClose?.addEventListener("click", toggleMenu);
+
+  mobileOverlay?.addEventListener("click", (e) => {
+    if (e.target === mobileOverlay) toggleMenu();
+  });
+</script>
 
 <style>
   header {
