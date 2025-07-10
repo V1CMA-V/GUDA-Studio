@@ -1,0 +1,63 @@
+---
+import TitleSection from "@/components/TitleSection.astro";
+
+// Ejemplo de partners, puedes reemplazar los logos y nombres por los reales
+const partners = [
+  {
+    name: "Atlixco Cultura",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png", // reemplaza por logo real
+    url: "https://atlixco.gob.mx/",
+  },
+  {
+    name: "Dance México",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
+    url: "#",
+  },
+  {
+    name: "FitLife Gym",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
+    url: "#",
+  },
+  {
+    name: "Escuelas Aliadas",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
+    url: "#",
+  },
+];
+---
+
+<section class="py-20 px-4">
+  <div class="max-w-4xl mx-auto flex flex-col items-center">
+    <TitleSection title="Colaboradores y Aliados" />
+    <p class="text-center text-lg text-gray-600 mb-10 max-w-2xl">
+      Juntos construimos una comunidad más fuerte. Gracias a nuestros aliados y
+      colaboradores por impulsar la danza y el desarrollo artístico en Atlixco y
+      México.
+    </p>
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full items-center justify-center"
+    >
+      {
+        partners.map((p) => (
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group"
+          >
+            <div class="w-24 h-24 bg-white border border-gray-200 rounded-xl flex items-center justify-center shadow-sm mb-3 transition-transform group-hover:scale-105">
+              <img
+                src={p.logo}
+                alt={p.name}
+                class="max-w-[70%] max-h-[70%] object-contain"
+              />
+            </div>
+            <span class="text-sm font-medium text-gray-700 group-hover:text-primary transition-colors">
+              {p.name}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+import TitleSection from "@/components/TitleSection.astro";
+
+// Ejemplo de testimonios, puedes cambiar o importar desde un JSON
+const testimonials = [
+  {
+    name: "Ana López",
+    role: "Alumna",
+    quote:
+      "Gudas Studio me ha motivado a superar mis límites y descubrir mi pasión por la danza. Los maestros son increíbles y el ambiente es único.",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    name: "Carlos Martínez",
+    role: "Padre de familia",
+    quote:
+      "El progreso de mi hija ha sido impresionante. Aquí no solo aprenden técnica, también valores y confianza.",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    name: "Sofía Ramírez",
+    role: "Alumna",
+    quote:
+      "La comunidad de Gudas Studio es como una familia. Recomiendo totalmente sus clases y talleres.",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
+  },
+];
+---
+
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-4xl mx-auto flex flex-col items-center">
+    <TitleSection title="Testimonios" />
+    <div class="grid md:grid-cols-3 gap-8 mt-12 w-full">
+      {
+        testimonials.map((t) => (
+          <div class="relative flex flex-col gap-4 items-center text-center bg-white border border-gray-200 rounded-2xl px-6 py-8 shadow-none hover:shadow-lg transition-shadow duration-300 justify-between">
+            <blockquote class="italic text-lg text-gray-800 leading-relaxed before:content-['“'] after:content-['”'] before:text-primary after:text-primary before:text-3xl after:text-3xl before:align-top after:align-bottom text-balance">
+              {t.quote}
+            </blockquote>
+            <div class="w-12 h-1 bg-gradient-to-r from-primary to-[#4079ff] rounded-full my-2" />
+            <div class="font-semibold text-primary text-base">{t.name}</div>
+            <div class="text-xs text-gray-500">{t.role}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

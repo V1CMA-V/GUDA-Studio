@@ -1,16 +1,15 @@
 ---
+import TitleSection from "@/components/TitleSection.astro";
 import { Clases } from "data.json";
 ---
 
 <section class="w-full px-8 flex flex-col items-center">
-  <div class="flex flex-col items-center mb-15 w-fit gap-3">
-    <h2 class="text-3xl md:text-5xl font-bold">Nuestras Clases</h2>
-    <div class="w-3/4 h-1 bg-gradient-to-l from-primary to-[#4079ff]"></div>
+  <TitleSection title="Nuestras Clases">
     <p class="text-lg md:text-xl w-3/4 text-pretty tracking-wide text-center">
       Ofrecemos una amplia variedad de programas diseñados para desarrollar tu
       potencial artístico y físico
     </p>
-  </div>
+  </TitleSection>
 
   <div class="grid md:grid-cols-3 gap-8 w-full max-w-[1600px]">
     {
