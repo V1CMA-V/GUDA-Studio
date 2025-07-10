@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutCTA from "@/sections/AboutCTA.astro";
+import ClassesGrid from "@/sections/ClassesGrid.astro";
+import ClassesHero from "@/sections/ClassesHero.astro";
+import Testimonials from "@/sections/Testimonials.astro";
+
+// Puedes importar los datos de clases desde un archivo JSON o JS
+import { Clases } from "data.json";
+console.log(Clases);
+---
+
+<Layout
+  title="Clases | GUDAS Studio"
+  description="Descubre nuestras clases de baile, gimnasia y entrenamiento físico en Atlixco. ¡Encuentra la ideal para ti!"
+>
+  <ClassesHero />
+  <ClassesGrid clases={Clases} />
+  <Testimonials />
+  <AboutCTA />
+</Layout>
