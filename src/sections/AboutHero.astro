@@ -1,36 +1,28 @@
 ---
-import GradientText from "@/components/GradientText.astro";
-
 /* Puedes recibir props si quieres hacerlo reutilizable */
 ---
 
 <section
-  class="about-hero bg-cover bg-center relative h-[80dvh] flex items-center justify-center text-white"
+  class="about-hero bg-cover bg-center relative h-dvh flex items-center justify-center text-white"
 >
   <!-- Imagen de fondo, ajusta la ruta según tu proyecto -->
   <div class="absolute inset-0 bg-black/50 z-0"></div>
   <div
     class="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto px-4 py-16"
   >
-    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-      Sobre GUDA Studio
-    </h1>
-    <GradientText
-      colors={["#0a716f", "#4079ff", "#0a716f", "#4079ff", "#0a716f"]}
-      animationSpeed={10}
-      showBorder={false}
-      className="text-xl md:text-2xl font-medium mb-6"
+    <h1
+      class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg uppercase"
     >
-      Pasión, técnica y comunidad en cada paso
-    </GradientText>
+      Bienvenido a GUDAS Studio
+    </h1>
     <p class="mb-8 text-lg md:text-xl">
-      En GUDA Studio creemos que el baile es para todos. Nuestra misión es
-      compartir la alegría del movimiento y construir una comunidad inclusiva.
+      Donde el arte del movimiento se encuentra con la excelencia en formación
+      escénica.
     </p>
     <!-- Botón opcional -->
     <a
-      href="/contact"
-      class="inline-block px-5 py-2 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
+      href="#contact"
+      class="px-5 py-2 text-xl text-white bg-transparent rounded-lg border border-white font-semibold hover:bg-white hover:text-primary transition-colors duration-200"
     >
       Conócenos
     </a>
@@ -39,6 +31,6 @@ import GradientText from "@/components/GradientText.astro";
 
 <style>
   .about-hero {
-    background-image: url("https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url('public/images/about/img2.webp');
   }
 </style>
