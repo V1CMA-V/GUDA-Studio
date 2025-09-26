@@ -1,20 +1,21 @@
 ---
-import EmailIcon from "@/components/icons/EmailIcon.astro";
-import FacebookIcon from "@/components/icons/FacebookIcon.astro";
-import InstagramIcon from "@/components/icons/InstagramIcon.astro";
-import MapIcon from "@/components/icons/MapIcon.astro";
-import WhatsappIcon from "@/components/icons/WhatsappIcon.astro";
-import Map from "@/components/Map.astro";
+import EmailIcon from '@/components/icons/EmailIcon.astro'
+import FacebookIcon from '@/components/icons/FacebookIcon.astro'
+import InstagramIcon from '@/components/icons/InstagramIcon.astro'
+import MapIcon from '@/components/icons/MapIcon.astro'
+import WhatsappIcon from '@/components/icons/WhatsappIcon.astro'
+import Map from '@/components/Map.astro'
 ---
 
 <section
   id="contact"
-  class="w-full px-4 py-16 flex flex-col items-center bg-white/10 backdrop-blur-lg border-t border-white/30"
+  class="w-full px-4 py-16 flex flex-col items-center bg-gradient-to-br from-background via-primary/5 to-background border-t border-primary/30"
 >
   <div class="flex flex-col items-center mb-15 w-fit gap-3">
-    <h2 class="text-3xl md:text-5xl font-bold">¡Únete a Guda Studio!</h2>
-    <div class="w-3/4 h-1 bg-gradient-to-r from-primary to-[#4079ff]"></div>
-    <p>
+    <h2 class="text-3xl md:text-5xl font-bold text-white">
+      ¡Únete a Gudas Studio!
+    </h2>
+    <p class="text-white/90 text-center">
       Comienza tu transformación artística hoy. Contáctanos para más información
       sobre nuestras clases y horarios.
     </p>
@@ -23,69 +24,69 @@ import Map from "@/components/Map.astro";
   <div class="flex flex-col md:flex-row gap-12 w-full max-w-6xl mt-10">
     <!-- Card de contacto -->
     <div
-      class="flex-1 flex flex-col gap-8 bg-white/20 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl p-8"
+      class="flex-1 flex flex-col gap-8 bg-background/80 backdrop-blur-lg border border-primary/30 rounded-2xl shadow-2xl p-8"
     >
       <h2
-        class="text-3xl md:text-4xl font-extrabold text-primary mb-4 tracking-tight drop-shadow-lg"
+        class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight drop-shadow-lg"
       >
         Contáctanos
       </h2>
       <div class="flex flex-col gap-5 text-lg">
         <a
           href="#"
-          class="flex items-center gap-4 bg-white/60 rounded-xl px-4 py-3 shadow group hover:-translate-y-1 transition-all duration-200"
+          class="flex items-center gap-4 bg-primary/20 border border-primary/30 rounded-xl px-4 py-3 shadow-lg group hover:-translate-y-1 transition-all duration-200"
         >
           <span
-            class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/20"
+            class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/30"
             ><MapIcon class="w-7 h-7 text-primary" /></span
           >
           <div>
             <strong class="block text-primary">Dirección</strong>
-            <span class="text-text/80">Atlixco, Puebla, México</span>
+            <span class="text-white/80">Atlixco, Puebla, México</span>
           </div>
         </a>
         <a
           href="#"
-          class="flex items-center gap-4 bg-white/60 rounded-xl px-4 py-3 shadow group hover:-translate-y-1 transition-all duration-200"
+          class="flex items-center gap-4 bg-primary/20 border border-primary/30 rounded-xl px-4 py-3 shadow-lg group hover:-translate-y-1 transition-all duration-200"
         >
           <span
-            class="flex items-center justify-center w-12 h-12 rounded-xl bg-green-500/20"
-            ><WhatsappIcon class="w-7 h-7 text-green-500" /></span
+            class="flex items-center justify-center w-12 h-12 rounded-xl bg-whatsapp/30"
+            ><WhatsappIcon class="w-7 h-7 text-whatsapp" /></span
           >
           <div>
-            <strong class="block text-green-600">Teléfono</strong>
-            <span class="text-text/80">(222) 123-4567</span>
+            <strong class="block text-support-2">Teléfono</strong>
+            <span class="text-white/80">(222) 123-4567</span>
           </div>
         </a>
         <a
           href="#"
-          class="flex items-center gap-4 bg-white/60 rounded-xl px-4 py-3 shadow group hover:-translate-y-1 transition-all duration-200"
+          class="flex items-center gap-4 bg-primary/20 border border-primary/30 rounded-xl px-4 py-3 shadow-lg group hover:-translate-y-1 transition-all duration-200"
         >
           <span
-            class="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-500/20"
-            ><EmailIcon class="w-7 h-7 text-blue-500" /></span
+            class="flex items-center justify-center w-12 h-12 rounded-xl bg-emphasis/30"
+            ><EmailIcon class="w-7 h-7 text-emphasis" /></span
           >
           <div>
-            <strong class="block text-blue-600">Email</strong>
-            <span class="text-text/80">contacto@gudastudio.com</span>
+            <strong class="block text-emphasis">Email</strong>
+            <span class="text-white/80">contacto@gudastudio.com</span>
           </div>
         </a>
       </div>
 
       <div class="mt-8">
-        <p class="text-xl text-primary font-bold mb-3 tracking-wide">
+        <p class="text-xl text-white font-bold mb-3 tracking-wide">
           Síguenos en nuestras redes sociales
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a
             href="#"
-            class="flex-1 text-white bg-gradient-to-tr from-[#3d81f5] to-[#6267f1] px-6 py-3 flex items-center justify-center gap-2 text-lg font-semibold rounded-xl shadow hover:scale-105 hover:from-[#6267f1] hover:to-[#3d81f5] transition-all duration-200"
+            class="flex-1 text-white bg-gradient-to-tr from-facebook to-facebook-2 px-6 py-3 flex items-center justify-center gap-2 text-lg font-semibold rounded-xl shadow-lg hover:scale-105 hover:from-facebook-2 hover:to-facebook transition-all duration-200"
           >
             <FacebookIcon class="size-8 text-white" /> Facebook
           </a>
           <a
             href="#"
-            class="flex-1 text-white bg-gradient-to-tr from-[#ee4446] to-[#ed4797] px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow hover:scale-105 hover:from-[#ed4797] hover:to-[#ee4446] transition-all duration-200"
+            class="flex-1 text-white bg-gradient-to-tr from-instagram via-instagram-3 to-instagram-2 px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg hover:scale-105 hover:from-instagram-2 hover:to-instagram transition-all duration-200"
           >
             <InstagramIcon class="size-8 text-white" /> Instagram
           </a>

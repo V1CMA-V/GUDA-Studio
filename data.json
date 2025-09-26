@@ -2,63 +2,27 @@
   "Clases": [
     {
       "image": "https://images.unsplash.com/photo-1533557252203-6ec9555fe200?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Baile Urbano",
-      "subname": "Hip Hop, Reggaeton, Breaking y más estilos urbanos.",
-      "description": "Domina los ritmos urbanas más populares con técnicas profesionales y estilo único.",
-      "colors": {
-        "primary": "#FF5733",
-        "secondary": "#C70039"
-      }
+      "name": "Fundacion",
+      "subname": "Breaking, loocking, popping, house y party dance",
+      "description": "Domina los ritmos urbanas más populares con técnicas profesionales y estilo único."
     },
     {
       "image": "https://images.unsplash.com/photo-1571208986310-dad726705a9f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Gimnasia Artística",
-      "subname": "Trabajo técnico especializado en cochonetas.",
-      "description": "Desarrolla fuerza, flexibilidad y control corporal con técnicas de gimnasia artística.",
-      "colors": {
-        "primary": "#FF6F61",
-        "secondary": "#6B5B95"
-      }
+      "name": "Clases Coreo",
+      "subname": "Reggaeton y hip hop.",
+      "description": "Desarrolla fuerza, flexibilidad y control corporal con técnicas de gimnasia artística."
     },
     {
       "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Entrenamiento Individual",
-      "subname": "Apratos, pesas y seguimiento personalizado.",
-      "description": "Programa personalizado con seguimiento técnico individual para maximizar tu potencial.",
-      "colors": {
-        "primary": "#4A90E2",
-        "secondary": "#50E3C2"
-      }
+      "name": "Gimnasia Acrobatica",
+      "subname": "Fuerza, Potencia, Resistencia y Flexibilidad.",
+      "description": "Programa personalizado con seguimiento técnico individual para maximizar tu potencial."
     },
     {
       "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Stretching Y Movilidad",
-      "subname": "Flexibilidad, elongación y control corporal.",
-      "description": "Mejora tu flexibilidad y control corporal con técnicas especializadas de estiramiento.",
-      "colors": {
-        "primary": "#FF5733",
-        "secondary": "#C70039"
-      }
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Preparación Escénica",
-      "subname": "Formación profesional y crews de competencia.",
-      "description": "Prepárate para el escenario profesional y competencias con nuestro programa avanzado.",
-      "colors": {
-        "primary": "#1a1a1a",
-        "secondary": "#333333"
-      }
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Clases Híbridas",
-      "subname": "Fusión de danza y acrobacia.",
-      "description": "Combina danza y acrobacia para desarrollar control, ritmo y presencia escénica únicos.",
-      "colors": {
-        "primary": "#542663",
-        "secondary": "#4f2c54"
-      }
+      "name": "Fortalecimiento Fisico",
+      "subname": "Entrenamiento fisico, preparacion personalizada, area de pesas y aparatos.",
+      "description": "Mejora tu flexibilidad y control corporal con técnicas especializadas de estiramiento."
     }
   ],
   "products": [

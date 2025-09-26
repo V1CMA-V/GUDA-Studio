@@ -1,17 +1,17 @@
 ---
-import ButtonRegister from "@/components/ButtonRegister.astro";
+import ButtonRegister from '@/components/ButtonRegister.astro'
 
-const { pathname } = Astro.url;
+const { pathname } = Astro.url
 
 // Resaltar la clase activa en el menú de navegación
-const isActive = (path: string) => pathname === path;
+const isActive = (path: string) => pathname === path
 ---
 
 <header
   class="fixed top-0 z-50 mx-auto flex items-center h-24 w-full select-none md:px-24 text-white sm:overflow-hidden"
 >
   <div class="relative flex justify-between w-full items-center px-6 py-4">
-    <div class="w-24 h-auto flex flex-col items-center justify-center">
+    <div class="w-44 h-auto flex flex-col items-center justify-center">
       <a href="/" class="flex items-center gap-2 group logo-hover">
         <img
           src="/logo-white.webp"
@@ -24,34 +24,34 @@ const isActive = (path: string) => pathname === path;
     <!-- Menú desktop -->
     <nav class="hidden md:flex items-center justify-between">
       <ul
-        class="flex gap-8 text-lg font-semibold tracking-widest items-center justify-between"
+        class="flex gap-8 text-lg font-light tracking-widest items-center justify-between uppercase"
         id="navContent"
       >
         <li>
           <a
             href="/"
-            class=`${isActive('/') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
+            class=`${isActive('/') ? 'glow-text font-semibold text-2xl' : 'text-white hover:glow-text'}`
             >Inicio</a
           >
         </li>
         <li>
           <a
             href="/about"
-            class=`${isActive('/about') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
+            class=`${isActive('/about') ? 'glow-text font-semibold text-2xl' : 'text-white hover:glow-text'}`
             >Sobre Nosotros</a
           >
         </li>
         <li>
           <a
             href="/classes"
-            class=`${isActive('/classes') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
+            class=`${isActive('/classes') ? 'glow-text font-semibold text-2xl' : 'text-white hover:glow-text'}`
             >Clases</a
           >
         </li>
         <li>
           <a
             href="/shop"
-            class=`${isActive('/shop') ? 'glow-text font-bold text-2xl' : 'text-white hover:glow-text'}`
+            class=`${isActive('/shop') ? 'glow-text font-semibold text-2xl' : 'text-white hover:glow-text'}`
             >Tienda</a
           >
         </li>
@@ -134,37 +134,37 @@ const isActive = (path: string) => pathname === path;
 </nav>
 
 <script>
-  import { gsap } from "gsap";
-  import { SplitText } from "gsap/SplitText";
-  gsap.registerPlugin(SplitText);
+  import { gsap } from 'gsap'
+  import { SplitText } from 'gsap/SplitText'
+  gsap.registerPlugin(SplitText)
 
-  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-  const mobileMenuClose = document.getElementById("mobileMenuClose");
-  const mobileOverlay = document.getElementById("mobileOverlay");
-  const menuOptions = document.querySelectorAll(".animate-line");
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn')
+  const mobileMenuClose = document.getElementById('mobileMenuClose')
+  const mobileOverlay = document.getElementById('mobileOverlay')
+  const menuOptions = document.querySelectorAll('.animate-line')
 
   // Timeline ---------------------------------------------------
   const tl = gsap
     .timeline({
       paused: true,
-      defaults: { ease: "power2.out" },
+      defaults: { ease: 'power2.out' },
     })
-    .set(mobileOverlay, { x: "100%" })
+    .set(mobileOverlay, { x: '100%' })
     .fromTo(
       mobileOverlay,
-      { opacity: 0, x: "100%" },
-      { opacity: 1, x: "0%", duration: 0.5 }
+      { opacity: 0, x: '100%' },
+      { opacity: 1, x: '0%', duration: 0.5 }
     )
-    .from(menuOptions, { opacity: 0, y: 60, stagger: 0.07 }, "-=0.25");
+    .from(menuOptions, { opacity: 0, y: 60, stagger: 0.07 }, '-=0.25')
 
   function toggleMenu() {
-    tl.reversed() ? tl.play() : tl.reverse();
+    tl.reversed() ? tl.play() : tl.reverse()
   }
 
-  mobileMenuBtn?.addEventListener("click", toggleMenu);
-  mobileMenuClose?.addEventListener("click", toggleMenu);
+  mobileMenuBtn?.addEventListener('click', toggleMenu)
+  mobileMenuClose?.addEventListener('click', toggleMenu)
 
-  mobileOverlay?.addEventListener("click", toggleMenu);
+  mobileOverlay?.addEventListener('click', toggleMenu)
 </script>
 
 <style>

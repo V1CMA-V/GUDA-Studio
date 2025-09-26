@@ -1,16 +1,16 @@
 ---
 interface Props {
-  isBig?: boolean;
+  isBig?: boolean
 }
 
-const { isBig } = Astro.props;
+const { isBig } = Astro.props
 ---
 
 <a
   href="https://wa.me/521234567890"
   target="_blank"
   rel="noopener"
-  class={`rounded-full bg-gradient-to-r from-primary to-[#4079ff] font-bold text-white shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200 flex items-center gap-2 group ${isBig ? "px-5 py-2 text-3xl" : "px-5 py-2 text-lg"}`}
+  class={`font-semibold text-white hover:scale-105 transition-transform duration-200 flex items-center gap-2 group ${isBig ? 'px-5 py-2 text-3xl' : 'px-5 py-2 text-lg'}`}
 >
   <span>Inscríbete</span>
   <svg

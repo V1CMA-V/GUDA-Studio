@@ -1,5 +1,5 @@
 ---
-import GradientText from "@/components/GradientText.astro";
+import GradientText from '@/components/GradientText.astro'
 ---
 
 <div
@@ -15,9 +15,9 @@ import GradientText from "@/components/GradientText.astro";
         class="w-auto h-40 md:h-70 md:w-auto group flex flex-col items-center justify-center"
       >
         <h2
-          class="w-fit px-2 py-1 text-white bg-gradient-to-br from-primary to-text font-semibold text-lg md:text-2xl rounded-lg mb-2 group-hover:translate-y-3 transition-transform duration-200"
+          class="w-fit px-2 -mb-8 text-white text-lg md:text-2xl group-hover:translate-y-3 transition-transform duration-200"
         >
-          Alitxco, Puebla <span class="text-sm">MX</span>
+          Alitxco, Puebla
         </h2>
         <img
           id="logo"
@@ -27,23 +27,14 @@ import GradientText from "@/components/GradientText.astro";
         />
       </div>
 
-      <p class="text-2xl md:text-3xl text-center font-semibold text-white">
-        Donde el arte del movimiento se fusiona con el desarrollo físico y
-        técnico.
+      <p class="text-2xl md:text-3xl text-center font-extralight text-white">
+        La comunidad de baile que estabas buscando.
       </p>
-      <GradientText
-        colors={["#0a716f", "#4079ff", "#0a716f", "#4079ff", "#0a716f"]}
-        animationSpeed={10}
-        showBorder={false}
-        className="text-3xl md:text-4xl text-center text-balance"
-      >
-        Transformamos pasión en excelencia artística.
-      </GradientText>
 
       <div class="flex flex-col md:flex-row md:gap-10 gap-4 items-center mt-12">
         <a
           href="#"
-          class="px-5 py-2 text-xl text-white bg-gradient-to-l from-primary to-text font-semibold rounded-lg hover:from-text hover:to-primary transition-colors duration-200"
+          class="px-5 py-2 text-xl text-white bg-transparent rounded-lg border border-white font-semibold hover:bg-white hover:text-primary transition-colors duration-200"
           >Comienza Tu Entrenamiento</a
         >
         <a
@@ -100,27 +91,27 @@ import GradientText from "@/components/GradientText.astro";
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const mainVideo = document.querySelector(".video-main");
-    const blurVideo = document.querySelector(".video-blur");
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainVideo = document.querySelector('.video-main')
+    const blurVideo = document.querySelector('.video-blur')
 
     const showVideos = () => {
       if (mainVideo instanceof HTMLMediaElement) {
-        mainVideo.classList.remove("hidden");
-        mainVideo.classList.add("animate-fade");
+        mainVideo.classList.remove('hidden')
+        mainVideo.classList.add('animate-fade')
       }
       if (blurVideo instanceof HTMLMediaElement) {
-        blurVideo.classList.remove("hidden");
-        blurVideo.classList.add("animate-fade");
+        blurVideo.classList.remove('hidden')
+        blurVideo.classList.add('animate-fade')
       }
-    };
+    }
 
     if (mainVideo instanceof HTMLMediaElement) {
       if (mainVideo.readyState >= 3) {
-        showVideos();
+        showVideos()
       } else {
-        mainVideo.addEventListener("loadeddata", showVideos);
+        mainVideo.addEventListener('loadeddata', showVideos)
       }
     }
-  });
+  })
 </script>

@@ -1,14 +1,23 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-background: #fdf8f3; /* Cremita claro, cálido y elegante */
-  --color-primary: #0a716f; /* Verde institucional */
-  --color-text: #1c1c1c; /* Texto principal, casi negro */
+  --color-background: #0a0a0a; /* Cremita claro, cálido y elegante */
+  --color-primary: #0a6e70; /* Verde institucional */
+  --color-text: #ffffff; /* Texto principal, casi negro */
   --color-secondary: #4f4f4f; /* Texto secundario, gris medio */
   --color-support-1: #7a503f; /* Marrón rojizo, cálido, terroso */
   --color-support-2: #d99e6a; /* Beige dorado, elegante */
   --color-background-cards: #eaf3f3; /* Verde grisáceo muy claro, para tarjetas */
   --color-emphasis: #b8494e; /* Rojo vino suave, para llamados a la acción */
+
+  /* Redes Sociales */
+
+  --color-facebook: #1566ac;
+  --color-facebook-2: #5975f7;
+  --color-whatsapp: #25d366;
+  --color-instagram: #574ec3;
+  --color-instagram-2: #d62e72;
+  --color-instagram-3: #cf2b72;
 }
 
 html {
@@ -20,7 +29,7 @@ body {
   color: var(--color-text);
   overflow-x: hidden;
 
-  font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat Variable', sans-serif;
 }
 
 img {

@@ -1,61 +1,64 @@
 ---
-import TitleSection from "@/components/TitleSection.astro";
-import { Clases } from "data.json";
+import TitleSection from '@/components/TitleSection.astro'
+import { Clases } from 'data.json'
 ---
 
-<section id="classes" class="w-full px-8 flex flex-col items-center">
-  <TitleSection title="Nuestras Clases">
-    <p class="text-lg md:text-xl w-3/4 text-pretty tracking-wide text-center">
-      Ofrecemos una amplia variedad de programas diseñados para desarrollar tu
-      potencial artístico y físico
-    </p>
+<section id="classes" class="w-full px-8 flex flex-col items-center mt-24">
+  <TitleSection title="Clases">
+    Te invitamos a unirte a nuestro programa de entrenamiento multidisciplinario
+    y desarrollar tu máximo potencial como artista sin importar tu edad o
+    experiencia.
   </TitleSection>
 
-  <div class="grid md:grid-cols-3 gap-8 w-full max-w-[1600px]">
+  <div class="grid md:grid-cols-2 gap-8 w-full max-w-6xl">
     {
-      Clases.map((clas, idx) => {
+      Clases.map((clas) => {
         return (
           <article
-            class={`relative flex flex-col items-center gap-8 p-8 rounded-2xl transition-all duration-300 group card-animate hover:scale-105`}
-            style={`--card-color: ${clas.colors.primary}; --card-color2: ${clas.colors.secondary}; animation-delay: ${idx * 80}ms;`}
+            class={`relative overflow-hidden rounded-3xl transition-all duration-500 group card-animate hover:scale-[1.02] border border-gray-100`}
           >
-            {/* Borde animado */}
-            <span class="pointer-events-none absolute inset-0 rounded-2xl border-2 border-[var(--card-color)] transition-all duration-300 group-hover:border-[var(--card-color2)] group-hover:shadow-[0_0_24px_0_var(--card-color2)] z-0 card-border" />
-            <div class="relative flex-2 h-full max-h-64 rounded-xl w-full overflow-hidden z-10">
+            {/* Imagen de fondo con overlay */}
+            <div class="relative h-72 overflow-hidden">
               <img
                 src={clas.image}
                 alt={clas.name}
-                class="object-cover w-full h-full rounded-xl duration-300 group-hover:scale-110 border-2 border-[var(--card-color2)]"
+                class="object-cover w-full h-full duration-700 group-hover:scale-110"
               />
-            </div>
-            <div class="flex-1 flex flex-col justify-center gap-4 z-10">
-              <h3 class="text-2xl font-bold text-center text-[var(--card-color)] tracking-widest transition-all duration-200">
-                {clas.name}
-              </h3>
-              <p class="text-md text-center">{clas.subname}</p>
-              <p class="text-sm font-semibold text-center">
-                {clas.description}
-              </p>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+              {/* Badge flotante */}
+              <div class="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                Disponible
+              </div>
             </div>
 
-            <div class="flex items-center gap-4 md:flex-row flex-col">
-              <a
-                href="#"
-                class="px-5 py-3 text-lg text-white bg-gradient-to-l from-[var(--card-color)] to-[var(--card-color2)] font-semibold rounded-lg hover:from-[var(--card-color2)] hover:to-[var(--card-color)] transition-colors duration-200"
-                style="animation-delay: 0.2s"
-              >
-                Reservar
-              </a>
-              <a
-                href="#"
-                class="px-5 py-3 text-lg text-[var(--card-color)] border-2 border-[var(--card-color)] bg-white font-semibold rounded-lg hover:bg-[var(--card-color)] hover:text-white transition-colors duration-200"
-                style="animation-delay: 0.4s"
-              >
-                Ver más
-              </a>
+            {/* Contenido superpuesto */}
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="text-2xl font-bold mb-2 uppercase tracking-wide drop-shadow-lg">
+                {clas.name}
+              </h3>
+              <p class="text-sm opacity-90 mb-1 font-medium">{clas.subname}</p>
+              <p class="text-xs opacity-80 leading-relaxed mb-4 line-clamp-2">
+                {clas.description}
+              </p>
+
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  Reservar
+                </a>
+                <a
+                  href="#"
+                  class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30 px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105"
+                >
+                  Ver más
+                </a>
+              </div>
             </div>
           </article>
-        );
+        )
       })
     }
   </div>
@@ -63,16 +66,16 @@ import { Clases } from "data.json";
 
 <style>
   article {
-    background: transparent;
     animation: cardsIn 0.8s cubic-bezier(0.36, 1.5, 0.5, 1) both;
     animation-timeline: view();
     animation-range: entry 10% cover 30%;
   }
+
   @keyframes cardsIn {
     0% {
       opacity: 0;
-      transform: translateY(20px) scale(0.92);
-      filter: blur(8px);
+      transform: translateY(30px) scale(0.9);
+      filter: blur(10px);
     }
     100% {
       opacity: 1;
@@ -81,23 +84,16 @@ import { Clases } from "data.json";
     }
   }
 
-  article:hover {
-    h3 {
-      text-shadow:
-        0 0 15px var(--card-color),
-        0 0 20px var(--card-color),
-        0 0 25px var(--card-color);
-    }
+  /* Utilidad para truncar texto */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .card-border {
-    box-shadow: 0 0 0 0 var(--card-color2, transparent);
-    transition:
-      border-color 0.3s,
-      box-shadow 0.3s;
-  }
-  .group:hover .card-border {
-    border-color: var(--card-color2, #4079ff);
-    box-shadow: 0 0 16px 0 var(--card-color2, #4079ff);
+  /* Sombra personalizada más intensa */
+  .shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
 </style>
