@@ -1,33 +1,33 @@
 ---
-import TitleSection from "@/components/TitleSection.astro";
+import TitleSection from '@/components/TitleSection.astro'
 
 // Ejemplo de testimonios, puedes cambiar o importar desde un JSON
 const testimonials = [
   {
-    name: "Ana López",
-    role: "Alumna",
+    name: 'Ana López',
+    role: 'Alumna',
     quote:
-      "Gudas Studio me ha motivado a superar mis límites y descubrir mi pasión por la danza. Los maestros son increíbles y el ambiente es único.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+      'Gudas Studio me ha motivado a superar mis límites y descubrir mi pasión por la danza. Los maestros son increíbles y el ambiente es único.',
+    image: 'https://randomuser.me/api/portraits/women/44.jpg',
   },
   {
-    name: "Carlos Martínez",
-    role: "Padre de familia",
+    name: 'Carlos Martínez',
+    role: 'Padre de familia',
     quote:
-      "El progreso de mi hija ha sido impresionante. Aquí no solo aprenden técnica, también valores y confianza.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+      'El progreso de mi hija ha sido impresionante. Aquí no solo aprenden técnica, también valores y confianza.',
+    image: 'https://randomuser.me/api/portraits/men/32.jpg',
   },
   {
-    name: "Sofía Ramírez",
-    role: "Alumna",
+    name: 'Sofía Ramírez',
+    role: 'Alumna',
     quote:
-      "La comunidad de Gudas Studio es como una familia. Recomiendo totalmente sus clases y talleres.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+      'La comunidad de Gudas Studio es como una familia. Recomiendo totalmente sus clases y talleres.',
+    image: 'https://randomuser.me/api/portraits/women/68.jpg',
   },
-];
+]
 ---
 
-<section class="py-20 px-4 bg-white">
+<section class="py-20 px-4">
   <div class="max-w-4xl mx-auto flex flex-col items-center">
     <TitleSection title="Testimonios" />
     <div class="grid md:grid-cols-3 gap-8 mt-12 w-full">

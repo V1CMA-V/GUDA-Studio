@@ -133,40 +133,6 @@ const isActive = (path: string) => pathname === path
   </ul>
 </nav>
 
-<script>
-  import { gsap } from 'gsap'
-  import { SplitText } from 'gsap/SplitText'
-  gsap.registerPlugin(SplitText)
-
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn')
-  const mobileMenuClose = document.getElementById('mobileMenuClose')
-  const mobileOverlay = document.getElementById('mobileOverlay')
-  const menuOptions = document.querySelectorAll('.animate-line')
-
-  // Timeline ---------------------------------------------------
-  const tl = gsap
-    .timeline({
-      paused: true,
-      defaults: { ease: 'power2.out' },
-    })
-    .set(mobileOverlay, { x: '100%' })
-    .fromTo(
-      mobileOverlay,
-      { opacity: 0, x: '100%' },
-      { opacity: 1, x: '0%', duration: 0.5 }
-    )
-    .from(menuOptions, { opacity: 0, y: 60, stagger: 0.07 }, '-=0.25')
-
-  function toggleMenu() {
-    tl.reversed() ? tl.play() : tl.reverse()
-  }
-
-  mobileMenuBtn?.addEventListener('click', toggleMenu)
-  mobileMenuClose?.addEventListener('click', toggleMenu)
-
-  mobileOverlay?.addEventListener('click', toggleMenu)
-</script>
-
 <style>
   header {
     background: transparent;
