@@ -7,10 +7,7 @@ import WhatsappIcon from '@/components/icons/WhatsappIcon.astro'
 import Map from '@/components/Map.astro'
 ---
 
-<section
-  id="contact"
-  class="w-full px-4 py-16 flex flex-col items-center bg-gradient-to-br from-background via-primary/5 to-background border-t border-primary/30"
->
+<section id="contact" class="w-full px-4 py-16 flex flex-col items-center">
   <div class="flex flex-col items-center mb-15 w-fit gap-3">
     <h2 class="text-3xl md:text-5xl font-bold text-white">
       ¡Únete a Gudas Studio!
@@ -42,7 +39,9 @@ import Map from '@/components/Map.astro'
           >
           <div>
             <strong class="block text-primary">Dirección</strong>
-            <span class="text-white/80">Atlixco, Puebla, México</span>
+            <span class="text-white/80 text-sm md:text-md"
+              >Atlixco, Puebla, México</span
+            >
           </div>
         </a>
         <a
@@ -55,7 +54,7 @@ import Map from '@/components/Map.astro'
           >
           <div>
             <strong class="block text-support-2">Teléfono</strong>
-            <span class="text-white/80">(222) 123-4567</span>
+            <span class="text-white/80 text-sm md:text-md">(222) 123-4567</span>
           </div>
         </a>
         <a
@@ -68,7 +67,9 @@ import Map from '@/components/Map.astro'
           >
           <div>
             <strong class="block text-emphasis">Email</strong>
-            <span class="text-white/80">contacto@gudastudio.com</span>
+            <span class="text-white/80 text-sm md:text-md"
+              >contacto@gudastudio.com</span
+            >
           </div>
         </a>
       </div>

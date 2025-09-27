@@ -2,27 +2,43 @@
   "Clases": [
     {
       "image": "https://images.unsplash.com/photo-1533557252203-6ec9555fe200?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Fundacion",
-      "subname": "Breaking, loocking, popping, house y party dance",
-      "description": "Domina los ritmos urbanas más populares con técnicas profesionales y estilo único."
+      "name": "Fundación",
+      "subname": "Breaking, Locking, Popping, House y Party Dance",
+      "description": "Domina los ritmos urbanos más populares con técnicas profesionales y estilo único. Perfecto para comenzar tu journey en el mundo del baile urbano.",
+      "level": "Principiante",
+      "duration": "60 min",
+      "schedule": "Lun, Mié, Vie 6:00 PM",
+      "price": "$300/mes"
     },
     {
       "image": "https://images.unsplash.com/photo-1571208986310-dad726705a9f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "name": "Clases Coreo",
-      "subname": "Reggaeton y hip hop.",
-      "description": "Desarrolla fuerza, flexibilidad y control corporal con técnicas de gimnasia artística."
+      "subname": "Reggaetón y Hip Hop",
+      "description": "Aprende coreografías completas de reggaetón y hip hop con los hits más actuales. Desarrolla tu estilo personal y confianza en el escenario.",
+      "level": "Intermedio",
+      "duration": "75 min",
+      "schedule": "Mar, Jue 7:00 PM",
+      "price": "$350/mes"
     },
     {
       "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Gimnasia Acrobatica",
-      "subname": "Fuerza, Potencia, Resistencia y Flexibilidad.",
-      "description": "Programa personalizado con seguimiento técnico individual para maximizar tu potencial."
+      "name": "Gimnasia Acrobática",
+      "subname": "Fuerza, Potencia, Resistencia y Flexibilidad",
+      "description": "Desarrolla habilidades acrobáticas impresionantes combinando fuerza, flexibilidad y control corporal. Incluye trabajo en suelo y aparatos.",
+      "level": "Avanzado",
+      "duration": "90 min",
+      "schedule": "Lun, Mié, Vie 8:00 PM",
+      "price": "$450/mes"
     },
     {
-      "image": "https://images.unsplash.com/photo-1540206063137-4a88ca974d1a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "name": "Fortalecimiento Fisico",
-      "subname": "Entrenamiento fisico, preparacion personalizada, area de pesas y aparatos.",
-      "description": "Mejora tu flexibilidad y control corporal con técnicas especializadas de estiramiento."
+      "image": "https://images.unsplash.com/photo-1571019613914-85f342c6a11e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "name": "Fortalecimiento Físico",
+      "subname": "Entrenamiento Físico, Preparación Personalizada",
+      "description": "Programa integral de acondicionamiento físico diseñado específicamente para bailarines. Incluye área de pesas, aparatos y entrenamiento funcional.",
+      "level": "Todos los niveles",
+      "duration": "60 min",
+      "schedule": "Lun a Vie 5:00 AM - 10:00 PM",
+      "price": "$250/mes"
     }
   ],
   "products": [
