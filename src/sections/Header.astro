@@ -87,51 +87,64 @@ const isActive = (path: string) => pathname === path
 <!-- Overlay y menú móvil -->
 <nav
   id="mobileOverlay"
-  class="fixed inset-0 backdrop-blur-md bg-black/70 z-[9999] h-screen w-full translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+  class="fixed inset-0 backdrop-blur-md bg-black/80 z-[9999] h-screen w-full opacity-0 invisible transition-all duration-300 ease-in-out md:hidden"
 >
   <!-- Exit button -->
   <button
     id="mobileMenuClose"
-    class="absolute top-5 right-6 text-6xl font-bold text-primary hover:text-white transition-colors duration-200"
-    >&times;</button
+    class="absolute top-6 right-6 z-[10001] text-4xl font-bold text-white hover:text-primary transition-colors duration-200"
+    aria-label="Cerrar menú">&times;</button
   >
 
   <!-- Navigation -->
-  <ul
-    id="mobileMenu"
-    class="flex flex-col items-start px-12 gap-12 justify-center h-full text-white tracking-widest"
-  >
-    <li>
-      <a
-        href="/"
-        class=`${isActive('/') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
-        >Inicio</a
+  <div class="flex flex-col justify-center items-center h-full px-8">
+    <ul
+      id="mobileMenu"
+      class="flex flex-col items-start gap-8 text-white tracking-widest"
+    >
+      <li
+        class="transform translate-y-8 opacity-0 transition-all duration-300 delay-100"
       >
-    </li>
-    <li>
-      <a
-        href="/about"
-        class=`${isActive('/about') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
-        >Sobre Nosotros</a
+        <a
+          href="/"
+          class=`${isActive('/') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-3xl sm:text-5xl uppercase`
+          >Inicio</a
+        >
+      </li>
+      <li
+        class="transform translate-y-8 opacity-0 transition-all duration-300 delay-200"
       >
-    </li>
-    <li>
-      <a
-        href="/classes"
-        class=`${isActive('/classes') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
-        >Clases</a
+        <a
+          href="/about"
+          class=`${isActive('/about') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-3xl sm:text-5xl uppercase`
+          >Sobre Nosotros</a
+        >
+      </li>
+      <li
+        class="transform translate-y-8 opacity-0 transition-all duration-300 delay-300"
       >
-    </li>
-    <li>
-      <a
-        href="/shop"
-        class=`${isActive('/shop') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-6xl animate-line`
-        >Tienda</a
+        <a
+          href="/classes"
+          class=`${isActive('/classes') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-3xl sm:text-5xl uppercase`
+          >Clases</a
+        >
+      </li>
+      <li
+        class="transform translate-y-8 opacity-0 transition-all duration-300 delay-400"
       >
-    </li>
-
-    <ButtonRegister isBig />
-  </ul>
+        <a
+          href="/shop"
+          class=`${isActive('/shop') ? 'glow-text font-bold' : 'text-white hover:glow-text font-medium'} text-3xl sm:text-5xl uppercase`
+          >Tienda</a
+        >
+      </li>
+      <li
+        class="transform translate-y-8 opacity-0 transition-all duration-300 delay-500 mt-8"
+      >
+        <ButtonRegister isBig />
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <style>
@@ -183,7 +196,13 @@ const isActive = (path: string) => pathname === path
 
   /* Mobile menu animations */
   #mobileOverlay.open {
-    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #mobileOverlay.open #mobileMenu li {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   /* Hamburger button animation */
@@ -193,50 +212,50 @@ const isActive = (path: string) => pathname === path
 
   #mobileMenuBtn span {
     transition: all 0.3s ease;
+    transform-origin: center;
   }
 
   #mobileMenuBtn.open span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(5px, 5px);
+    background: white;
   }
 
   #mobileMenuBtn.open span:nth-child(2) {
     opacity: 0;
+    transform: scale(0);
   }
 
   #mobileMenuBtn.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(7px, -6px);
+    background: white;
   }
 
-  /* Mobile menu items animation */
-  #mobileMenu li {
-    transform: translateX(-50px);
-    opacity: 0;
+  /* Smooth link hover effects */
+  #mobileMenu a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
     transition: all 0.3s ease;
   }
 
-  #mobileOverlay.open #mobileMenu li {
-    transform: translateX(0);
-    opacity: 1;
+  #mobileMenu a:hover {
+    transform: scale(1.05);
   }
 
-  #mobileOverlay.open #mobileMenu li:nth-child(1) {
-    transition-delay: 0.1s;
+  #mobileMenu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background: linear-gradient(90deg, #0a6e70, #4079ff);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
   }
 
-  #mobileOverlay.open #mobileMenu li:nth-child(2) {
-    transition-delay: 0.2s;
-  }
-
-  #mobileOverlay.open #mobileMenu li:nth-child(3) {
-    transition-delay: 0.3s;
-  }
-
-  #mobileOverlay.open #mobileMenu li:nth-child(4) {
-    transition-delay: 0.4s;
-  }
-
-  #mobileOverlay.open #mobileMenu li:nth-child(5) {
-    transition-delay: 0.5s;
+  #mobileMenu a:hover::after {
+    width: 100%;
   }
 </style>
 
@@ -245,7 +264,9 @@ const isActive = (path: string) => pathname === path
     const mobileMenuBtn = document.getElementById('mobileMenuBtn')
     const mobileOverlay = document.getElementById('mobileOverlay')
     const mobileMenuClose = document.getElementById('mobileMenuClose')
+    const mobileMenuLinks = document.querySelectorAll('#mobileMenu a')
     const body = document.body
+    let isMenuOpen = false
 
     // Verificar que los elementos existen
     if (!mobileMenuBtn || !mobileOverlay || !mobileMenuClose) {
@@ -253,54 +274,102 @@ const isActive = (path: string) => pathname === path
       return
     }
 
+    // Función para prevenir el scroll del body
+    function preventBodyScroll(prevent: boolean) {
+      if (prevent) {
+        const scrollY = window.scrollY
+        body.style.position = 'fixed'
+        body.style.top = `-${scrollY}px`
+        body.style.width = '100%'
+        body.style.overflow = 'hidden'
+      } else {
+        const scrollY = body.style.top
+        body.style.position = ''
+        body.style.top = ''
+        body.style.width = ''
+        body.style.overflow = ''
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }
+
     // Función para abrir el menú móvil
     function openMobileMenu() {
-      if (mobileOverlay && mobileMenuBtn) {
-        mobileOverlay.classList.add('open')
-        mobileMenuBtn.classList.add('open')
-        body.style.overflow = 'hidden'
-        body.style.position = 'fixed'
-        body.style.width = '100%'
-        mobileMenuBtn.setAttribute('aria-expanded', 'true')
-        mobileMenuBtn.setAttribute('aria-label', 'Cerrar menú')
-      }
+      if (isMenuOpen || !mobileOverlay || !mobileMenuBtn || !mobileMenuClose)
+        return
+
+      isMenuOpen = true
+      mobileOverlay.classList.add('open')
+      mobileMenuBtn.classList.add('open')
+      preventBodyScroll(true)
+      mobileMenuBtn.setAttribute('aria-expanded', 'true')
+      mobileMenuBtn.setAttribute('aria-label', 'Cerrar menú')
+
+      // Focus trap - enfocar el botón de cerrar
+      setTimeout(() => {
+        mobileMenuClose?.focus()
+      }, 100)
     }
 
     // Función para cerrar el menú móvil
     function closeMobileMenu() {
-      if (mobileOverlay && mobileMenuBtn) {
-        mobileOverlay.classList.remove('open')
-        mobileMenuBtn.classList.remove('open')
-        body.style.overflow = ''
-        body.style.position = ''
-        body.style.width = ''
-        mobileMenuBtn.setAttribute('aria-expanded', 'false')
-        mobileMenuBtn.setAttribute('aria-label', 'Abrir menú')
-      }
+      if (!isMenuOpen || !mobileOverlay || !mobileMenuBtn) return
+
+      isMenuOpen = false
+      mobileOverlay.classList.remove('open')
+      mobileMenuBtn.classList.remove('open')
+      preventBodyScroll(false)
+      mobileMenuBtn.setAttribute('aria-expanded', 'false')
+      mobileMenuBtn.setAttribute('aria-label', 'Abrir menú')
+
+      // Devolver el foco al botón del menú
+      mobileMenuBtn?.focus()
     }
 
     // Event listeners
-    mobileMenuBtn.addEventListener('click', openMobileMenu)
-    mobileMenuClose.addEventListener('click', closeMobileMenu)
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation()
+      if (isMenuOpen) {
+        closeMobileMenu()
+      } else {
+        openMobileMenu()
+      }
+    })
 
-    // Cerrar menú al hacer click en el overlay (fuera del contenido)
-    mobileOverlay.addEventListener('click', function (e) {
+    mobileMenuClose.addEventListener('click', (e) => {
+      e.stopPropagation()
+      closeMobileMenu()
+    })
+
+    // Cerrar menú al hacer click en el overlay (fuera del contenido del menú)
+    mobileOverlay.addEventListener('click', (e) => {
       if (e.target === mobileOverlay) {
         closeMobileMenu()
       }
     })
 
     // Cerrar menú con la tecla Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mobileOverlay.classList.contains('open')) {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        e.preventDefault()
         closeMobileMenu()
       }
     })
 
     // Cerrar menú al hacer click en cualquier enlace del menú móvil
-    const mobileMenuLinks = document.querySelectorAll('#mobileMenu a')
     mobileMenuLinks.forEach((link) => {
-      link.addEventListener('click', closeMobileMenu)
+      link.addEventListener('click', () => {
+        // Pequeño delay para permitir la navegación
+        setTimeout(() => {
+          closeMobileMenu()
+        }, 150)
+      })
+    })
+
+    // Cerrar menú al cambiar el tamaño de la ventana (responsive)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        closeMobileMenu()
+      }
     })
   }
 
@@ -310,4 +379,7 @@ const isActive = (path: string) => pathname === path
   } else {
     initMobileMenu()
   }
+
+  // Re-inicializar en navegación client-side (para SPAs)
+  document.addEventListener('astro:page-load', initMobileMenu)
 </script>
