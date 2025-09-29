@@ -1,0 +1,39 @@
+---
+interface Props {
+  id?: string
+  class?: string
+  paddingY?: 'small' | 'medium' | 'large'
+  maxWidth?: 'full' | 'screen' | '7xl' | '6xl' | '5xl' | '4xl'
+}
+
+const {
+  id,
+  class: className = '',
+  paddingY = 'medium',
+  maxWidth = '6xl',
+} = Astro.props
+
+const paddingClasses = {
+  small: 'py-8 md:py-12',
+  medium: 'py-12 md:py-16',
+  large: 'py-16 md:py-20',
+}
+
+const maxWidthClasses = {
+  full: 'max-w-full',
+  screen: 'max-w-screen-xl',
+  '7xl': 'max-w-7xl',
+  '6xl': 'max-w-6xl',
+  '5xl': 'max-w-5xl',
+  '4xl': 'max-w-4xl',
+}
+---
+
+<section
+  id={id}
+  class={`w-full px-4 md:px-6 lg:px-8 ${paddingClasses[paddingY]} ${className}`}
+>
+  <div class={`mx-auto ${maxWidthClasses[maxWidth]}`}>
+    <slot />
+  </div>
+</section>

@@ -22,14 +22,23 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal scrolling on mobile */
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   overflow-x: hidden;
+  /* Improved font rendering on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 
   font-family: 'Montserrat Variable', sans-serif;
+
+  /* Disable text size adjust on iOS */
+  -webkit-text-size-adjust: 100%;
 }
 
 img {
@@ -66,6 +75,33 @@ strong {
 /* Effect glow text header */
 @utility glow-text {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
+}
+
+/* Mobile touch improvements */
+* {
+  /* Better touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improved button and link touch targets for mobile */
+button,
+a,
+[role='button'] {
+  min-height: 44px; /* iOS accessibility guideline */
+  min-width: 44px;
+}
+
+/* Prevent tap highlight on iOS */
+button,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Ensure images don't overflow on mobile */
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Animation with Scroll CSS */
